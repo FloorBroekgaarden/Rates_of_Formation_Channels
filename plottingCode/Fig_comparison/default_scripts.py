@@ -20,9 +20,14 @@ from matplotlib import rcParams
 #Set latex environment for plots/labels
 rc('font', family='serif', weight = 'bold')
 rc('text', usetex=True)
-matplotlib.rcParams['text.latex.preamble']=[r"\usepackage{amsmath}"]
-matplotlib.rcParams['text.latex.preamble'] = [r'\boldmath']
+# matplotlib.rcParams['text.latex.preamble']=[r"\usepackage{amsmath}"]
+# matplotlib.rcParams['text.latex.preamble'] = [r'\boldmath']
 rc('axes', linewidth=2)
+rc('text', usetex=True)
+
+
+
+
 
 matplotlib.rcParams['xtick.major.size'] = 12
 matplotlib.rcParams['ytick.major.size'] = 12
