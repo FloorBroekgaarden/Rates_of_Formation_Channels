@@ -30,10 +30,10 @@ B21-eddington-1E3,https://ui.adsabs.harvard.edu/abs/2021A%26A...647A.153B/abstra
 B21-eddington-1E5,https://ui.adsabs.harvard.edu/abs/2021A%26A...647A.153B/abstract,2021,POSYDON,POSY,MESA,$10^6 \times \dot{m}_{\rm{E}}$ , ,BA21
 B21-eddington-1E9,https://ui.adsabs.harvard.edu/abs/2021A%26A...647A.153B/abstract,2021,POSYDON,POSY,MESA,$10^9 \times \dot{m}_{\rm{E}}$ , ,BA21
 B21-noRLOFatZAMS,https://ui.adsabs.harvard.edu/abs/2021A%26A...647A.153B/abstract,2021,POSYDON,POSY,MESA,no MT ZAMS, ,BA21
-B21-logU-SanaPrior,https://ui.adsabs.harvard.edu/abs/2021A%26A...647A.153B/abstract,2021,POSYDON,POSY,MESA,prior, ,BA21
-B21-logU-noRLOFatZAMS,https://ui.adsabs.harvard.edu/abs/2021A%26A...647A.153B/abstract,2021,POSYDON,POSY,MESA,prior,no MT ZAMS,BA21
+B21-logU-SanaPrior,https://ui.adsabs.harvard.edu/abs/2021A%26A...647A.153B/abstract,2021,POSYDON,POSY,MESA,logU prior, ,BA21
+B21-logU-noRLOFatZAMS,https://ui.adsabs.harvard.edu/abs/2021A%26A...647A.153B/abstract,2021,POSYDON,POSY,MESA,logU prior,no MT ZAMS,BA21
 B21-qcrit-Claeys,https://ui.adsabs.harvard.edu/abs/2021A%26A...647A.153B/abstract,2021,POSYDON,POSY,MESA,Claeys $q_{\rm{crit}}$, ,BA21
-B21-qcrit-Belczynski,https://ui.adsabs.harvard.edu/abs/2021A%26A...647A.153B/abstract,2021,POSYDON,POSY,MESA,$q_{\rm{crit}}$, ,BA21
+B21-qcrit-Belczynski,https://ui.adsabs.harvard.edu/abs/2021A%26A...647A.153B/abstract,2021,POSYDON,POSY,MESA,Belcz $q_{\rm{crit}}$, ,BA21
 RG21-SN:N20,https://ui.adsabs.harvard.edu/abs/2021ApJ...912L..23R/abstract,2021,POSYDON,POSY,MESA,N20 SN, ,RG21
 RG21-SN:rapid,https://ui.adsabs.harvard.edu/abs/2021ApJ...912L..23R/abstract,2021,POSYDON,POSY,MESA,rapid SN, ,RG21
 RG21-SN:delayed,https://ui.adsabs.harvard.edu/abs/2021ApJ...912L..23R/abstract,2021,POSYDON,POSY,MESA,delayed SN, ,RG21
@@ -78,3 +78,12 @@ Boesky_alphaCE_2_beta0_75,TBD,2024,COMPAS,COMP,SSE,$\alpha = 2$,$\beta = 0.75$,B
 Boesky_alphaCE_10_beta0_25,TBD,2024,COMPAS,COMP,SSE,$\alpha = 10$,$\beta = 0.25$,BO24
 Boesky_alphaCE_10_beta0_5,TBD,2024,COMPAS,COMP,SSE,$\alpha = 10$,$\beta = 0.5$,BO24
 Boesky_alphaCE_10_beta0_75,TBD,2024,COMPAS,COMP,SSE,$\alpha = 10$,$\beta = 0.75$,BO24
+Boesky_sigma_30_RMP_D,TBD,2024,COMPAS,COMP,SSE,$\sigma = 30$,delayed SN,BO24
+Boesky_sigma_30_RMP_M,TBD,2024,COMPAS,COMP,SSE,$\sigma = 30$,MM SN,BO24
+Boesky_sigma_30_RMP_R,TBD,2024,COMPAS,COMP,SSE,$\sigma = 30$,rapid SN,BO24
+Boesky_sigma_265_RMP_D,TBD,2024,COMPAS,COMP,SSE,$\sigma = 265$,delayed SN,BO24
+Boesky_sigma_265_RMP_M,TBD,2024,COMPAS,COMP,SSE,$\sigma = 265$,MM SN,BO24
+Boesky_sigma_265_RMP_R,TBD,2024,COMPAS,COMP,SSE,$\sigma = 265$,rapid SN,BO24
+Boesky_sigma_750_RMP_D,TBD,2024,COMPAS,COMP,SSE,$\sigma = 750$,delayed SN,BO24
+Boesky_sigma_750_RMP_M,TBD,2024,COMPAS,COMP,SSE,$\sigma = 750$,MM SN,BO24
+Boesky_sigma_750_RMP_R,TBD,2024,COMPAS,COMP,SSE,$\sigma = 750$,rapid SN,BO24
