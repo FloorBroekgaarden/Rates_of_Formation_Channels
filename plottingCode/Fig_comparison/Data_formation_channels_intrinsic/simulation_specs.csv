@@ -87,3 +87,22 @@ Boesky_sigma_265_RMP_R,TBD,2024,COMPAS,COMP,SSE,$\sigma = 265$,rapid SN,BO24
 Boesky_sigma_750_RMP_D,TBD,2024,COMPAS,COMP,SSE,$\sigma = 750$,delayed SN,BO24
 Boesky_sigma_750_RMP_M,TBD,2024,COMPAS,COMP,SSE,$\sigma = 750$,MM SN,BO24
 Boesky_sigma_750_RMP_R,TBD,2024,COMPAS,COMP,SSE,$\sigma = 750$,rapid SN,BO24
+Pellouin25,https://ui.adsabs.harvard.edu/abs/2025A%26A...693A.283P/abstract,2025,COSMIC,COSM,SSE,rapid SN,qcrit ,PE25
+R25-A-Fiducial,TBD,2025,StarTrack,STarT,SSE,pessimistic CE, ,RO25
+R25-B-RMAX,TBD,2025,StarTrack,StarT,SSE,RMAX, ,RO25
+R25-C-Conv_ML1.5,TBD,2025,StarTrack,StarT,SSE,RMAX, ,RO25
+R25-D-Conv_ML1.5_RMAX,TBD,2025,StarTrack,StarT,SSE,RMAX, ,RO25
+R25-E-Conv_ML1.82_MLTpp,TBD,2025,StarTrack,STarT,SSE,RMAX, ,RO25
+R25-E-Conv_ML1.82_MLTpp_RMAX,TBD,2025,StarTrack,StarT,SSE,RMAX, ,RO25
+R25-A-Fiducial_Optimistic,TBD,2025,StarTrack,StarT,SSE,optimistic CE, ,RO25
+R25-B-RMAX_Optimistic,TBD,2025,StarTrack,StarT,SSE,optimistic CE, ,RO25
+R23-A-Fiducial,TBD,2023,StarTrack,StarT,SSE,pessimistic CE,fiducial,RO23
+R23-B-RMAX2,TBD,2023,StarTrack,StarT,SSE,RMAX,METISSE-MESA,RO23
+R23-C-RMAX3,TBD,2023,StarTrack,StarT,SSE,RMAX,METISSE-MESA,RO23
+R23-D-RMAX4,TBD,2023,StarTrack,STarT,SSE,RMAX,MESA MLT+++,RO23
+R23-E-RMAX4B,TBD,2023,StarTrack,StarT,SSE,RMAX,MESA,RO23
+R23-A-Fiducial_Optimistic,TBD,2023,StarTrack,StarT,SSE,optimistic CE, ,RO23
+R23-B-RMAX2_Optimistic,TBD,2023,StarTrack,StarT,SSE,optimistic CE, ,RO23
+R23-C-RMAX3_Optimistic,TBD,2023,StarTrack,StarT,SSE,optimistic CE, ,RO23
+R23-D-RMAX4_Optimistic,TBD,2023,StarTrack,StarT,SSE,optimistic CE, ,RO23
+R23-E-RMAX4B_Optimistic,TBD,2023,StarTrack,STarT,SSE,optimistic CE, ,RO23
