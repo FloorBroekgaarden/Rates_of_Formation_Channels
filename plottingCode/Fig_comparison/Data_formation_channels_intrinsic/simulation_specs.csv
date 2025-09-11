@@ -59,7 +59,7 @@ DT22-M13,https://ui.adsabs.harvard.edu/abs/2022arXiv220708837D/abstract,2022,SeB
 DT22-M14,https://ui.adsabs.harvard.edu/abs/2022arXiv220708837D/abstract,2022,SeBa,SeBa,SSE,$\beta = 0.7$,"$\xi_{ad,rad} = 7.5$",$\gamma = 1$,$T_{eff}$-K,DT22
 DT22-M15,https://ui.adsabs.harvard.edu/abs/2022arXiv220708837D/abstract,2022,SeBa,SeBa,SSE,$\beta = 0.3$,"$\xi_{ad,rad} = 7.5$",$\gamma = 1$,$T_{eff}$-IT,DT22
 DT22-M16,https://ui.adsabs.harvard.edu/abs/2022arXiv220708837D/abstract,2022,SeBa,SeBa,SSE,$\beta = 0.7$,"$\xi_{ad,rad} = 7.5$",$\gamma = 1$,$T_{eff}$-IT,DT22
-van Son (2022),https://ui.adsabs.harvard.edu/abs/2022arXiv220708837D/abstract,2023,COSMIC,COSM,SSE,fiducial , , , ,vS22
+van Son (2022),https://ui.adsabs.harvard.edu/abs/2022arXiv220708837D/abstract,2023,COSMIC,COSM,SSE,fiducial , , , ,vSon22
 Briel (2022) ,https://ui.adsabs.harvard.edu/abs/2022arXiv220613842B/abstract,2023,BPASS,BPASS,STARS,fiducial , , , ,BRI22
 Briel (2022) - RAPID,https://ui.adsabs.harvard.edu/abs/2022arXiv220613842B/abstract,2023,BPASS,BPASS,STARS,rapid SN, , , ,BRI22
 Briel (2022) - DELAYED,https://ui.adsabs.harvard.edu/abs/2022arXiv220613842B/abstract,2023,BPASS,BPASS,STARS,delayed SN, , , ,BRI22
@@ -87,28 +87,28 @@ Boesky_sigma_265_RMP_R,TBD,2024,COMPAS,COMP,SSE,$\sigma = 265$,rapid SN,$\alpha 
 Boesky_sigma_750_RMP_D,TBD,2024,COMPAS,COMP,SSE,$\sigma = 750$,delayed SN,$\alpha = 0.5$, ,BO24
 Boesky_sigma_750_RMP_M,TBD,2024,COMPAS,COMP,SSE,$\sigma = 750$,MM SN,$\alpha = 0.5$, ,BO24
 Boesky_sigma_750_RMP_R,TBD,2024,COMPAS,COMP,SSE,$\sigma = 750$,rapid SN,$\alpha = 0.5$, ,BO24
-Pellouin25,https://ui.adsabs.harvard.edu/abs/2025A%26A...693A.283P/abstract,2025,COSMIC,COSM,SSE,rapid SN,qcrit , ,  ,PE25
-R25-A-Fiducial,TBD,2025,StarTrack,STarT,SSE,fiducial, , , ,RO25
-R25-B-RMAX,TBD,2025,StarTrack,StarT,SSE,Rmax, , , ,RO25
-R25-C-Conv_ML1.5,TBD,2025,StarTrack,StarT,SSE,Rmax MET, , , ,RO25
-R25-D-Conv_ML1.5_RMAX,TBD,2025,StarTrack,StarT,SSE,Rmax MLT+++, , , ,RO25
-R25-E-Conv_ML1.82_MLTpp,TBD,2025,StarTrack,STarT,SSE,Rmax MLT+++, , , ,RO25
-R25-E-Conv_ML1.82_MLTpp_RMAX,TBD,2025,StarTrack,StarT,SSE,Rmax MLT+++, , , ,RO25
-R25-A-Fiducial_Optimistic,TBD,2025,StarTrack,StarT,SSE,fiducial,optimistic CE, , ,RO25
-R25-B-RMAX_Optimistic,TBD,2025,StarTrack,StarT,SSE,Rmax,optimistic CE, , ,RO25
-R23-A-Fiducial,TBD,2023,StarTrack,StarT,SSE,fiducial, , , ,RO23
-R23-B-RMAX2,TBD,2023,StarTrack,StarT,SSE,Rmax MET, , , ,RO23
-R23-C-RMAX3,TBD,2023,StarTrack,StarT,SSE,Rmax MET, , , ,RO23
-R23-D-RMAX4,TBD,2023,StarTrack,STarT,SSE,Rmax MLT+++, , , ,RO23
-R23-E-RMAX4B,TBD,2023,StarTrack,StarT,SSE,Rmax MESA, , , ,RO23
-R23-A-Fiducial_Optimistic,TBD,2023,StarTrack,StarT,SSE,fiducial,optimistic CE, , ,RO23
-R23-B-RMAX2_Optimistic,TBD,2023,StarTrack,StarT,SSE,Rmax MET,optimistic CE, , ,RO23
-R23-C-RMAX3_Optimistic,TBD,2023,StarTrack,StarT,SSE,Rmax MET,optimistic CE, , ,RO23
-R23-D-RMAX4_Optimistic,TBD,2023,StarTrack,StarT,SSE,Rmax MLT+++,optimistic CE, , ,RO23
-R23-E-RMAX4B_Optimistic,TBD,2023,StarTrack,STarT,SSE,Rmax MESA,optimistic CE,  ,  ,RO23
+Pellouin25,https://ui.adsabs.harvard.edu/abs/2025A%26A...693A.283P/abstract,2025,COSMIC,COSM,SSE,rapid SN,qcrit , , ,PE25
+R25-A-Fiducial,https://arxiv.org/abs/2410.17315,2025,StarTrack,STarT,SSE,fiducial, , , ,RO25
+R25-B-RMAX,https://arxiv.org/abs/2410.17315,2025,StarTrack,StarT,SSE,fiducial ,Rmax , , ,RO25
+R25-C-Conv_ML1.5,https://arxiv.org/abs/2410.17315,2025,StarTrack,StarT,SSE,conv crit Klencki, , , ,RO25
+R25-D-Conv_ML1.5_RMAX,https://arxiv.org/abs/2410.17315,2025,StarTrack,StarT,SSE,conv crit Klencki,Rmax , , ,RO25
+R25-E-Conv_ML1.82_MLTpp,https://arxiv.org/abs/2410.17315,2025,StarTrack,STarT,SSE,conv crit MESA, , , ,RO25
+R25-E-Conv_ML1.82_MLTpp_RMAX,https://arxiv.org/abs/2410.17315,2025,StarTrack,StarT,SSE,conv crit MESA,Rmax , , ,RO25
+R23-A-Fiducial,https://arxiv.org/pdf/2211.15800,2023,StarTrack,StarT,SSE,fiducial, , , ,RO23
+R23-B-RMAX2,https://arxiv.org/pdf/2211.15800,2023,StarTrack,StarT,SSE,Rmax METISSE BOOST , , , ,RO23
+R23-C-RMAX3,https://arxiv.org/pdf/2211.15800,2023,StarTrack,StarT,SSE,Rmax METISSE MESA, , , ,RO23
+R23-D-RMAX4,https://arxiv.org/pdf/2211.15800,2023,StarTrack,STarT,SSE,Rmax MESA MLT+++, , , ,RO23
+R23-E-RMAX4B,https://arxiv.org/pdf/2211.15800,2023,StarTrack,StarT,SSE,Rmax MESA no MLT++, , , ,RO23
 Xing24_fiducial,https://arxiv.org/pdf/2410.20415,2024,POSYDON,POSY,MESA,fiducial, , , ,Xing24
 Xing24_alpha_2,https://arxiv.org/pdf/2410.20415,2024,POSYDON,POSY,MESA,$\alpha = 2$, , , ,Xing24
 Xing24_sigma_150,https://arxiv.org/pdf/2410.20415,2024,POSYDON,POSY,MESA,$\sigma = 150$, , , ,Xing24
 Xing24_sigma_61_6,https://arxiv.org/pdf/2410.20415,2024,POSYDON,POSY,MESA,$\sigma = 62$, , , ,Xing24
-Hendriks23,https://arxiv.org/pdf/2309.09339,2023,binary c,binaryc,SSE,delayed SN,qcrit, , ,Hendriks23
-van Son (2023) ,https://ui.adsabs.harvard.edu/abs/2023ApJ...948..105V,2023,COMPAS,COMP,SSE,delayed SN, , , ,vanSon23
+Hendriks23,https://arxiv.org/pdf/2309.09339,2023,binary c,binaryc,SSE,delayed SN,qcrit, , ,Hen23
+van Son (2023) ,https://ui.adsabs.harvard.edu/abs/2023ApJ...948..105V,2023,COMPAS,COMP,SSE,delayed SN, , , ,vSon23
+R25-A-Fiducial_Optimistic,not used ,2025,StarTrack,StarT,SSE,fiducial,optimistic CE, , ,RO25
+R25-B-RMAX_Optimistic,not used ,2025,StarTrack,StarT,SSE,Rmax,optimistic CE, , ,RO25
+R23-A-Fiducial_Optimistic,not used ,2023,StarTrack,StarT,SSE,fiducial,optimistic CE, , ,RO23
+R23-B-RMAX2_Optimistic,not used ,2023,StarTrack,StarT,SSE,Rmax MET,optimistic CE, , ,RO23
+R23-C-RMAX3_Optimistic,not used ,2023,StarTrack,StarT,SSE,Rmax MET,optimistic CE, , ,RO23
+R23-D-RMAX4_Optimistic,not used ,2023,StarTrack,StarT,SSE,Rmax MLT+++,optimistic CE, , ,RO23
+R23-E-RMAX4B_Optimistic,not used ,2023,StarTrack,STarT,SSE,Rmax MESA,optimistic CE, , ,RO23
