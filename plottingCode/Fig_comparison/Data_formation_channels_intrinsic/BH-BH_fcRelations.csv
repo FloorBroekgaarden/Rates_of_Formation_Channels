@@ -143,3 +143,14 @@ R23-C-RMAX3,R23-D-RMAX4,max radius,max radius,Rmax METISSE MESA,Rmax MESA MLT+++
 R23-C-RMAX3,R23-E-RMAX4B,max radius,max radius,Rmax METISSE MESA,Rmax MESA no MLT++,18,Romagnolo (2023),StarTrack
 R23-D-RMAX4,R23-E-RMAX4B,max radius,max radius,Rmax MESA MLT+++,Rmax MESA no MLT++,18,Romagnolo (2023),StarTrack
 van Son (2023) ,van Son (2023) ,fiducial,fiducial,none,none,19,van Son (2023) ,COMPAS
+Li25-a,Li25-b,gamma,$\gamma$,-1.00,-2.00,21,Li (2025),MOBSE
+Li25-a,Li25-c,alpha,$\alpha \downarrow$ ,1.00,0.50,21,Li (2025),MOBSE
+Li25-a,Li25-d,alpha,$\alpha \uparrow$ ,1.00,2.00,21,Li (2025),MOBSE
+Li25-a,Li25-e,wind,$f_\rm{WR} \ \downarrow$,1.00,0.50,21,Li (2025),MOBSE
+Li25-a,Li25-f,wind,$f_\rm{WR} \ \uparrow$,1.00,2.00,21,Li (2025),MOBSE
+Li25-a,Li25-g,sigma,$\sigma_{cc} \downarrow$,265.00,45.00,21,Li (2025),MOBSE
+Li25-a,Li25-h,sigma,$\sigma_{cc} \uparrow$,265.00,750.00,21,Li (2025),MOBSE
+Li25-a,Li25-i,qcrit,qcrit change,$q_{\rm{c}}$,$q_{\rm{c}}$ Ge,21,Li (2025),MOBSE
+Sgalletta_alpha_1,Sgalletta_alpha_0_5,alpha,$\alpha \downarrow$ ,1.00,0.50,22,Sgalletta (2026) ,SEVN
+Sgalletta_alpha_1,Sgalletta_alpha_3,alpha,$\alpha \uparrow$ ,1.00,3.00,22,Sgalletta (2026) ,SEVN
+Sgalletta_alpha_3,Sgalletta_alpha_5,alpha,$\alpha \uparrow$ ,3.00,5.00,22,Sgalletta (2026) ,SEVN
