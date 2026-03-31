@@ -38,7 +38,7 @@ RG21-SN:N20,RG21-SN:rapid,supernova,rapid SN,N20,rapid,3,Roman-Garza (2022),POSY
 RG21-SN:rapid,RG21-SN:delayed,fryer,delayed SN,rapid,delayed,3,Roman-Garza (2022),POSYDON
 RG21-SN:delayed,RG21-SN:N20,supernova,N20 SN,delayed,N20,3,Roman-Garza (2022),POSYDON
 RG21-ESCN:Full-SN:N20,RG21-ESCN:Full-SN:rapid,supernova,rapid SN,N20,rapid,3,Roman-Garza (2022),POSYDON
-RG21-ESCN:Full-SN:rapid,RG21-ECSN:Full-SN:delayed,supernova,delayed SN,rapid,delayed,3,Roman-Garza (2022),POSYDON
+RG21-ESCN:Full-SN:rapid,RG21-ECSN:Full-SN:delayed,fryer,delayed SN,rapid,delayed,3,Roman-Garza (2022),POSYDON
 RG21-ECSN:Full-SN:delayed,RG21-ESCN:Full-SN:N20,supernova,N20 SN,delayed,N20,3,Roman-Garza (2022),POSYDON
 RG21-SN:N20,RG21-ESCN:Full-SN:N20,ECSN,add ECSN,no ECSN,add ECSN,3,Roman-Garza (2022),POSYDON
 RG21-SN:rapid,RG21-ESCN:Full-SN:rapid,ECSN,add ECSN,no ECSN,add ECSN,3,Roman-Garza (2022),POSYDON
@@ -151,3 +151,6 @@ Li25-a,Li25-i,qcrit,qcrit change,$q_{\rm{c}}$,$q_{\rm{c}}$ Ge,14,Li (2025),MOBSE
 Sgalletta_alpha_1,Sgalletta_alpha_0_5,alpha,$\alpha \downarrow$ ,1.00,0.50,15,Sgalletta (2026) ,SEVN
 Sgalletta_alpha_1,Sgalletta_alpha_3,alpha,$\alpha \uparrow$ ,1.00,3.00,15,Sgalletta (2026) ,SEVN
 Sgalletta_alpha_3,Sgalletta_alpha_5,alpha,$\alpha \uparrow$ ,3.00,5.00,15,Sgalletta (2026) ,SEVN
+ShaoLi_rapid,ShaoLi_delayed,fryer,delayed SN,rapid,delayed,20,Shao and Li (2021),BSE
+ShaoLi_rapid,ShaoLi_stochastic ,supernova,MM SN,rapid,MM SN,20,Shao and Li (2021),BSE
+ShaoLi_delayed,ShaoLi_stochastic ,supernova,MM SN,delayed,MM SN,20,Shao and Li (2021),BSE
