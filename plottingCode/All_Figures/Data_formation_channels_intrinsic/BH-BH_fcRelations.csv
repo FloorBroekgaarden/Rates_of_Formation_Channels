@@ -148,9 +148,9 @@ Li25-a,Li25-f,wind,$f_\rm{WR} \ \uparrow$,1.00,2.00,14,Li (2025),MOBSE
 Li25-a,Li25-g,sigma,$\sigma_{cc} \downarrow$,265.00,45.00,14,Li (2025),MOBSE
 Li25-a,Li25-h,sigma,$\sigma_{cc} \uparrow$,265.00,750.00,14,Li (2025),MOBSE
 Li25-a,Li25-i,stability,qcrit change,$q_{\rm{c}}$,$q_{\rm{c}}$ Ge,14,Li (2025),MOBSE
-Sgalletta_alpha_1,Sgalletta_alpha_0_5,alpha,$\alpha \downarrow$ ,1.00,0.50,15,Sgalletta (2026) ,SEVN
-Sgalletta_alpha_1,Sgalletta_alpha_3,alpha,$\alpha \uparrow$ ,1.00,3.00,15,Sgalletta (2026) ,SEVN
-Sgalletta_alpha_3,Sgalletta_alpha_5,alpha,$\alpha \uparrow$ ,3.00,5.00,15,Sgalletta (2026) ,SEVN
+Sgalletta_alpha_1,Sgalletta_alpha_0_5,alpha,$\alpha \downarrow$ ,1.00,0.50,15,Sgalletta (2025) ,SEVN
+Sgalletta_alpha_1,Sgalletta_alpha_3,alpha,$\alpha \uparrow$ ,1.00,3.00,15,Sgalletta (2025) ,SEVN
+Sgalletta_alpha_3,Sgalletta_alpha_5,alpha,$\alpha \uparrow$ ,3.00,5.00,15,Sgalletta (2025) ,SEVN
 ShaoLi_rapid,ShaoLi_delayed,supernova,delayed,rapid,delayed,20,Shao and Li (2021),BSE
 ShaoLi_rapid,ShaoLi_stochastic ,supernova,MM SN,rapid,MM SN,20,Shao and Li (2021),BSE
 ShaoLi_delayed,ShaoLi_stochastic ,supernova,MM SN,delayed,MM SN,20,Shao and Li (2021),BSE
