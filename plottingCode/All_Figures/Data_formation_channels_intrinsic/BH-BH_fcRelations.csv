@@ -1,39 +1,39 @@
 from_modelname,to_modelname,using,travel_label,from_option,to_option,color code,legend,code
-B22-A-fiducial,B22-A-fiducial,none,fiducial,1.00,1.00,1,Broekgaarden et al. (2022),COMPAS
-B22-B-beta0-25,B22-C-beta0-5,beta,$\beta \uparrow$ ,0.25,0.50,1,Broekgaarden et al. (2022),COMPAS
-B22-C-beta0-5,B22-D-beta0-75,beta,$\beta \uparrow$ ,0.50,0.75,1,Broekgaarden et al. (2022),COMPAS
-B22-A-fiducial,B22-E-unstableBB,caseBB stability,unstable caseBB,always stable,always unstable,1,Broekgaarden et al. (2022),COMPAS
-B22-E-unstableBB,B22-F-unstableBB-optimistic,optimistic ,optimistic CE ,pessimistic,optimistic ,1,Broekgaarden et al. (2022),COMPAS
-B22-H-alpha0-5,B22-G-alpha0-1,alpha,$\alpha \downarrow$ ,0.50,0.10,1,Broekgaarden et al. (2022),COMPAS
-B22-A-fiducial,B22-H-alpha0-5,alpha,$\alpha \downarrow$ ,1.00,0.50,1,Broekgaarden et al. (2022),COMPAS
-B22-A-fiducial,B22-I-alpha2,alpha,$\alpha \uparrow$ ,1.00,2.00,1,Broekgaarden et al. (2022),COMPAS
-B22-I-alpha2,B22-J-alpha10,alpha,$\alpha \uparrow$ ,2.00,10.00,1,Broekgaarden et al. (2022),COMPAS
-B22-A-fiducial,B22-K-optimisticCE,optimistic ,optimistic CE ,pessimistic,optimistic ,1,Broekgaarden et al. (2022),COMPAS
-B22-K-optimisticCE,B22-F-unstableBB-optimistic,caseBB stability,unstable caseBB,always stable,always unstable,1,Broekgaarden et al. (2022),COMPAS
-B22-A-fiducial,B22-L-rapid,supernova,rapid SN,delayed,rapid,1,Broekgaarden et al. (2022),COMPAS
-B22-A-fiducial,B22-M-max-mNS:2,NS mass ,NS mass $\downarrow$ ,2.50,2.00,1,Broekgaarden et al. (2022),COMPAS
-B22-A-fiducial,B22-N-max-mNS:3,NS mass ,NS mass $\uparrow$ ,2.50,3.00,1,Broekgaarden et al. (2022),COMPAS
-B22-A-fiducial,B22-O-noPISN,PISN,no PISN,with PISN ,no PISN,1,Broekgaarden et al. (2022),COMPAS
-B22-A-fiducial,B22-P-sigma:100,sigma,$\sigma_{cc} \downarrow$,265.00,100.00,1,Broekgaarden et al. (2022),COMPAS
-B22-P-sigma:100,B22-Q-sigma:30,sigma,$\sigma_{cc} \downarrow$,100.00,30.00,1,Broekgaarden et al. (2022),COMPAS
-B22-R-noBHkick,B22-Q-sigma:30,sigma ,no BH kick,0.00,30.00,1,Broekgaarden et al. (2022),COMPAS
-B22-A-fiducial,B22-S-fWR:0-1,wind,$f_\rm{WR} \ \downarrow$,1.00,0.10,1,Broekgaarden et al. (2022),COMPAS
-B22-A-fiducial,B22-T-fWR:5,wind,$f_\rm{WR} \ \uparrow$,1.00,5.00,1,Broekgaarden et al. (2022),COMPAS
-B21-alpha0-35,B21-alpha0-2,alpha,$\alpha \downarrow$ ,0.35,0.20,2,Bavera et al. (2021) ,POSYDON
-B21-alpha0-5,B21-alpha0-35,alpha,$\alpha \downarrow$ ,0.50,0.35,2,Bavera et al. (2021) ,POSYDON
-B21-alpha0-75,B21-alpha0-5,alpha,$\alpha \downarrow$ ,0.75,0.50,2,Bavera et al. (2021) ,POSYDON
-B21-alpha1,B21-alpha0-75,alpha,$\alpha \downarrow$ ,1.00,0.75,2,Bavera et al. (2021) ,POSYDON
-B21-alpha1,B21-alpha1,fiducial,fiducial,1.00,1.00,2,Bavera et al. (2021) ,POSYDON
-B21-alpha1,B21-alpha2,alpha,$\alpha \uparrow$ ,1.00,2.00,2,Bavera et al. (2021) ,POSYDON
-B21-alpha2,B21-alpha5,alpha,$\alpha \uparrow$ ,2.00,5.00,2,Bavera et al. (2021) ,POSYDON
-B21-alpha1,B21-eddington-1E3,eddington accretion,$\dot{M}_{\rm{edd}} \ \uparrow$,eddington,"1,000.00",2,Bavera et al. (2021) ,POSYDON
-B21-eddington-1E3,B21-eddington-1E5,eddington accretion,$\dot{M}_{\rm{edd}} \ \uparrow$,eddington,"100,000.00",2,Bavera et al. (2021) ,POSYDON
-B21-eddington-1E5,B21-eddington-1E9,eddington accretion,$\dot{M}_{\rm{edd}} \ \uparrow$,eddington,"1,000,000,000.00",2,Bavera et al. (2021) ,POSYDON
-B21-alpha1,B21-noRLOFatZAMS,priors,noRLOFatZAMS,RLOFatZAMS,noRLOFatZAMS,2,Bavera et al. (2021) ,POSYDON
-B21-alpha1,B21-logU-SanaPrior,priors,SanaPrior,not Sana uniform prior,Sana uniform prior,2,Bavera et al. (2021) ,POSYDON
-B21-logU-SanaPrior,B21-logU-noRLOFatZAMS,priors,SanaPrior,RLOFatZAMS,noRLOFatZAMS,2,Bavera et al. (2021) ,POSYDON
-B21-noRLOFatZAMS,B21-logU-noRLOFatZAMS,priors,SanaPrior,not Sana uniform prior,Sana uniform prior,2,Bavera et al. (2021) ,POSYDON
-B21-qcrit-Belczynski,B21-qcrit-Claeys,stability,qcrit change,Belczynski,Claeys,2,Bavera et al. (2021) ,POSYDON
+B22-A-fiducial,B22-A-fiducial,none,fiducial,1.00,1.00,1,Broekgaarden (2022),COMPAS
+B22-B-beta0-25,B22-C-beta0-5,beta,$\beta \uparrow$ ,0.25,0.50,1,Broekgaarden (2022),COMPAS
+B22-C-beta0-5,B22-D-beta0-75,beta,$\beta \uparrow$ ,0.50,0.75,1,Broekgaarden (2022),COMPAS
+B22-A-fiducial,B22-E-unstableBB,caseBB stability,unstable caseBB,always stable,always unstable,1,Broekgaarden (2022),COMPAS
+B22-E-unstableBB,B22-F-unstableBB-optimistic,optimistic ,optimistic CE ,pessimistic,optimistic ,1,Broekgaarden (2022),COMPAS
+B22-H-alpha0-5,B22-G-alpha0-1,alpha,$\alpha \downarrow$ ,0.50,0.10,1,Broekgaarden (2022),COMPAS
+B22-A-fiducial,B22-H-alpha0-5,alpha,$\alpha \downarrow$ ,1.00,0.50,1,Broekgaarden (2022),COMPAS
+B22-A-fiducial,B22-I-alpha2,alpha,$\alpha \uparrow$ ,1.00,2.00,1,Broekgaarden (2022),COMPAS
+B22-I-alpha2,B22-J-alpha10,alpha,$\alpha \uparrow$ ,2.00,10.00,1,Broekgaarden (2022),COMPAS
+B22-A-fiducial,B22-K-optimisticCE,optimistic ,optimistic CE ,pessimistic,optimistic ,1,Broekgaarden (2022),COMPAS
+B22-K-optimisticCE,B22-F-unstableBB-optimistic,caseBB stability,unstable caseBB,always stable,always unstable,1,Broekgaarden (2022),COMPAS
+B22-A-fiducial,B22-L-rapid,supernova,rapid SN,delayed,rapid,1,Broekgaarden (2022),COMPAS
+B22-A-fiducial,B22-M-max-mNS:2,NS mass ,NS mass $\downarrow$ ,2.50,2.00,1,Broekgaarden (2022),COMPAS
+B22-A-fiducial,B22-N-max-mNS:3,NS mass ,NS mass $\uparrow$ ,2.50,3.00,1,Broekgaarden (2022),COMPAS
+B22-A-fiducial,B22-O-noPISN,PISN,no PISN,with PISN ,no PISN,1,Broekgaarden (2022),COMPAS
+B22-A-fiducial,B22-P-sigma:100,sigma,$\sigma_{cc} \downarrow$,265.00,100.00,1,Broekgaarden (2022),COMPAS
+B22-P-sigma:100,B22-Q-sigma:30,sigma,$\sigma_{cc} \downarrow$,100.00,30.00,1,Broekgaarden (2022),COMPAS
+B22-R-noBHkick,B22-Q-sigma:30,sigma ,no BH kick,0.00,30.00,1,Broekgaarden (2022),COMPAS
+B22-A-fiducial,B22-S-fWR:0-1,wind,$f_\rm{WR} \ \downarrow$,1.00,0.10,1,Broekgaarden (2022),COMPAS
+B22-A-fiducial,B22-T-fWR:5,wind,$f_\rm{WR} \ \uparrow$,1.00,5.00,1,Broekgaarden (2022),COMPAS
+B21-alpha0-35,B21-alpha0-2,alpha,$\alpha \downarrow$ ,0.35,0.20,2,Bavera (2021),POSYDON
+B21-alpha0-5,B21-alpha0-35,alpha,$\alpha \downarrow$ ,0.50,0.35,2,Bavera (2021),POSYDON
+B21-alpha0-75,B21-alpha0-5,alpha,$\alpha \downarrow$ ,0.75,0.50,2,Bavera (2021),POSYDON
+B21-alpha1,B21-alpha0-75,alpha,$\alpha \downarrow$ ,1.00,0.75,2,Bavera (2021),POSYDON
+B21-alpha1,B21-alpha1,fiducial,fiducial,1.00,1.00,2,Bavera (2021),POSYDON
+B21-alpha1,B21-alpha2,alpha,$\alpha \uparrow$ ,1.00,2.00,2,Bavera (2021),POSYDON
+B21-alpha2,B21-alpha5,alpha,$\alpha \uparrow$ ,2.00,5.00,2,Bavera (2021),POSYDON
+B21-alpha1,B21-eddington-1E3,eddington accretion,$\dot{M}_{\rm{edd}} \ \uparrow$,eddington,"1,000.00",2,Bavera (2021),POSYDON
+B21-eddington-1E3,B21-eddington-1E5,eddington accretion,$\dot{M}_{\rm{edd}} \ \uparrow$,eddington,"100,000.00",2,Bavera (2021),POSYDON
+B21-eddington-1E5,B21-eddington-1E9,eddington accretion,$\dot{M}_{\rm{edd}} \ \uparrow$,eddington,"1,000,000,000.00",2,Bavera (2021),POSYDON
+B21-alpha1,B21-noRLOFatZAMS,priors,noRLOFatZAMS,RLOFatZAMS,noRLOFatZAMS,2,Bavera (2021),POSYDON
+B21-alpha1,B21-logU-SanaPrior,priors,SanaPrior,not Sana uniform prior,Sana uniform prior,2,Bavera (2021),POSYDON
+B21-logU-SanaPrior,B21-logU-noRLOFatZAMS,priors,SanaPrior,RLOFatZAMS,noRLOFatZAMS,2,Bavera (2021),POSYDON
+B21-noRLOFatZAMS,B21-logU-noRLOFatZAMS,priors,SanaPrior,not Sana uniform prior,Sana uniform prior,2,Bavera (2021),POSYDON
+B21-qcrit-Belczynski,B21-qcrit-Claeys,stability,qcrit change,Belczynski,Claeys,2,Bavera (2021),POSYDON
 RG21-SN:N20,RG21-SN:rapid,supernova,rapid SN,N20,rapid,3,Roman-Garza (2022),POSYDON
 RG21-SN:rapid,RG21-SN:delayed,supernova,delayed SN,rapid,delayed,3,Roman-Garza (2022),POSYDON
 RG21-SN:delayed,RG21-SN:N20,supernova,N20,delayed,N20,3,Roman-Garza (2022),POSYDON
@@ -49,38 +49,38 @@ RG21-noBH-kick-SN:delayed,RG21-noBHkick-SN:N20,supernova,N20,delayed,N20,3,Roman
 RG21-SN:N20,RG21-noBHkick-SN:N20,sigma,no BH kick,265.00,0.00,3,Roman-Garza (2022),POSYDON
 RG21-SN:rapid,RG21-noBHkick-SN:rapid,sigma,no BH kick,265.00,0.00,3,Roman-Garza (2022),POSYDON
 RG21-SN:delayed,RG21-noBH-kick-SN:delayed,sigma,no BH kick,265.00,0.00,3,Roman-Garza (2022),POSYDON
-DT22-M1,DT22-M2,beta,$\beta \uparrow$ ,0.30,0.70,4,Dorozsmai (2022),SeBa
-DT22-M3,DT22-M4,beta,$\beta \uparrow$ ,0.30,0.70,4,Dorozsmai (2022),SeBa
-DT22-M5,DT22-M6,beta,$\beta \uparrow$ ,0.30,0.70,4,Dorozsmai (2022),SeBa
-DT22-M7,DT22-M8,beta,$\beta \uparrow$ ,0.30,0.70,4,Dorozsmai (2022),SeBa
-DT22-M9,DT22-M10,beta,$\beta \uparrow$ ,0.30,0.70,4,Dorozsmai (2022),SeBa
-DT22-M11,DT22-M12,beta,$\beta \uparrow$ ,0.30,0.70,4,Dorozsmai (2022),SeBa
-DT22-M13,DT22-M14,beta,$\beta \uparrow$ ,0.30,0.70,4,Dorozsmai (2022),SeBa
-DT22-M15,DT22-M16,beta,$\beta \uparrow$ ,0.30,0.70,4,Dorozsmai (2022),SeBa
-DT22-M1,DT22-M5,stability,"$\xi_{ad,rad} \uparrow$ ",4.00,7.50,4,Dorozsmai (2022),SeBa
-DT22-M2,DT22-M6,stability,"$\xi_{ad,rad} \uparrow$ ",4.00,7.50,4,Dorozsmai (2022),SeBa
-DT22-M3,DT22-M7,stability,"$\xi_{ad,rad} \uparrow$ ",4.00,7.50,4,Dorozsmai (2022),SeBa
-DT22-M4,DT22-M8,stability,"$\xi_{ad,rad} \uparrow$ ",4.00,7.50,4,Dorozsmai (2022),SeBa
-DT22-M9,DT22-M13,stability,"$\xi_{ad,rad} \uparrow$ ",4.00,7.50,4,Dorozsmai (2022),SeBa
-DT22-M10,DT22-M14,stability,"$\xi_{ad,rad} \uparrow$ ",4.00,7.50,4,Dorozsmai (2022),SeBa
-DT22-M11,DT22-M15,stability,"$\xi_{ad,rad} \uparrow$ ",4.00,7.50,4,Dorozsmai (2022),SeBa
-DT22-M12,DT22-M16,stability,"$\xi_{ad,rad} \uparrow$ ",4.00,7.50,4,Dorozsmai (2022),SeBa
-DT22-M1,DT22-M9,CE gamma,$\gamma \downarrow$,2.50,1.00,4,Dorozsmai (2022),SeBa
-DT22-M2,DT22-M10,CE gamma,$\gamma \downarrow$,2.50,1.00,4,Dorozsmai (2022),SeBa
-DT22-M3,DT22-M11,CE gamma,$\gamma \downarrow$,2.50,1.00,4,Dorozsmai (2022),SeBa
-DT22-M4,DT22-M12,CE gamma,$\gamma \downarrow$,2.50,1.00,4,Dorozsmai (2022),SeBa
-DT22-M5,DT22-M13,CE gamma,$\gamma \downarrow$,2.50,1.00,4,Dorozsmai (2022),SeBa
-DT22-M6,DT22-M14,CE gamma,$\gamma \downarrow$,2.50,1.00,4,Dorozsmai (2022),SeBa
-DT22-M7,DT22-M15,CE gamma,$\gamma \downarrow$,2.50,1.00,4,Dorozsmai (2022),SeBa
-DT22-M8,DT22-M16,CE gamma,$\gamma \downarrow$,2.50,1.00,4,Dorozsmai (2022),SeBa
-DT22-M1,DT22-M3,$T_{eff}$,$T_{eff}$,K,IT,4,Dorozsmai (2022),SeBa
-DT22-M2,DT22-M4,$T_{eff}$,$T_{eff}$,K,IT,4,Dorozsmai (2022),SeBa
-DT22-M5,DT22-M7,$T_{eff}$,$T_{eff}$,K,IT,4,Dorozsmai (2022),SeBa
-DT22-M6,DT22-M8,$T_{eff}$,$T_{eff}$,K,IT,4,Dorozsmai (2022),SeBa
-DT22-M9,DT22-M11,$T_{eff}$,$T_{eff}$,K,IT,4,Dorozsmai (2022),SeBa
-DT22-M10,DT22-M12,$T_{eff}$,$T_{eff}$,K,IT,4,Dorozsmai (2022),SeBa
-DT22-M13,DT22-M15,$T_{eff}$,$T_{eff}$,K,IT,4,Dorozsmai (2022),SeBa
-DT22-M14,DT22-M16,$T_{eff}$,$T_{eff}$,K,IT,4,Dorozsmai (2022),SeBa
+DT22-M1,DT22-M2,beta,$\beta \uparrow$ ,0.30,0.70,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M3,DT22-M4,beta,$\beta \uparrow$ ,0.30,0.70,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M5,DT22-M6,beta,$\beta \uparrow$ ,0.30,0.70,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M7,DT22-M8,beta,$\beta \uparrow$ ,0.30,0.70,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M9,DT22-M10,beta,$\beta \uparrow$ ,0.30,0.70,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M11,DT22-M12,beta,$\beta \uparrow$ ,0.30,0.70,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M13,DT22-M14,beta,$\beta \uparrow$ ,0.30,0.70,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M15,DT22-M16,beta,$\beta \uparrow$ ,0.30,0.70,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M1,DT22-M5,stability,"$\xi_{ad,rad} \uparrow$ ",4.00,7.50,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M2,DT22-M6,stability,"$\xi_{ad,rad} \uparrow$ ",4.00,7.50,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M3,DT22-M7,stability,"$\xi_{ad,rad} \uparrow$ ",4.00,7.50,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M4,DT22-M8,stability,"$\xi_{ad,rad} \uparrow$ ",4.00,7.50,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M9,DT22-M13,stability,"$\xi_{ad,rad} \uparrow$ ",4.00,7.50,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M10,DT22-M14,stability,"$\xi_{ad,rad} \uparrow$ ",4.00,7.50,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M11,DT22-M15,stability,"$\xi_{ad,rad} \uparrow$ ",4.00,7.50,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M12,DT22-M16,stability,"$\xi_{ad,rad} \uparrow$ ",4.00,7.50,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M1,DT22-M9,CE gamma,$\gamma \downarrow$,2.50,1.00,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M2,DT22-M10,CE gamma,$\gamma \downarrow$,2.50,1.00,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M3,DT22-M11,CE gamma,$\gamma \downarrow$,2.50,1.00,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M4,DT22-M12,CE gamma,$\gamma \downarrow$,2.50,1.00,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M5,DT22-M13,CE gamma,$\gamma \downarrow$,2.50,1.00,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M6,DT22-M14,CE gamma,$\gamma \downarrow$,2.50,1.00,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M7,DT22-M15,CE gamma,$\gamma \downarrow$,2.50,1.00,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M8,DT22-M16,CE gamma,$\gamma \downarrow$,2.50,1.00,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M1,DT22-M3,$T_{eff}$,$T_{eff}$,K,IT,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M2,DT22-M4,$T_{eff}$,$T_{eff}$,K,IT,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M5,DT22-M7,$T_{eff}$,$T_{eff}$,K,IT,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M6,DT22-M8,$T_{eff}$,$T_{eff}$,K,IT,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M9,DT22-M11,$T_{eff}$,$T_{eff}$,K,IT,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M10,DT22-M12,$T_{eff}$,$T_{eff}$,K,IT,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M13,DT22-M15,$T_{eff}$,$T_{eff}$,K,IT,4,Dorozsmai and Toonen (2022),SeBa
+DT22-M14,DT22-M16,$T_{eff}$,$T_{eff}$,K,IT,4,Dorozsmai and Toonen (2022),SeBa
 van Son (2022),van Son (2022),fiducial,fiducial,none,none,5,van Son (2022) ,COMPAS
 Briel (2022) ,Briel (2022) - RAPID,supernova,rapid SN,BPASS,rapid,6,Briel (2022),BPASS
 Briel (2022) - RAPID,Briel (2022) - DELAYED,supernova,delayed SN,rapid,delayed,6,Briel (2022),BPASS
