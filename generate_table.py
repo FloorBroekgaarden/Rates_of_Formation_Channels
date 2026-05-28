@@ -67,6 +67,20 @@ def frac_val(v):
     except (ValueError, TypeError):
         return None
 
+def hex_to_rgb(h):
+    h = h.lstrip('#')
+    return tuple(int(h[i:i+2], 16) for i in (0, 2, 4))
+
+def lighten(h, t=0.35):
+    """Blend hex color with white at fraction t (0=white, 1=original)."""
+    r, g, b = hex_to_rgb(h)
+    return f'#{int(r*t+255*(1-t)):02x}{int(g*t+255*(1-t)):02x}{int(b*t+255*(1-t)):02x}'
+
+def text_on(h):
+    """Return dark or light text color for readability on background h."""
+    r, g, b = hex_to_rgb(h)
+    return '#1a1a2e' if (0.299*r + 0.587*g + 0.114*b) / 255 > 0.55 else '#ffffff'
+
 # ── load data ─────────────────────────────────────────────────────────────────
 
 specs = read_csv(BASE + 'simulation_specs_detailed.csv', header_row=1)
@@ -83,27 +97,28 @@ all_models = sorted(specs_by.keys())
 
 # ── column definitions ────────────────────────────────────────────────────────
 
-# (source_key, display_name, format_fn, group_id, tooltip)
+# (source_key, display_name, format_fn, fc_color, tooltip)
+# Colors match obtain_fc_dict() palette in the plotting code
 RATE_COLS = [
-    ('All intrinsic (z=0) [Gpc^-3 yr^-1]', 'Rate<br>[Gpc⁻³yr⁻¹]', fmt_rate, None,
+    ('All intrinsic (z=0) [Gpc^-3 yr^-1]', 'Total Rate<br>[Gpc⁻³yr⁻¹]', fmt_rate, '#444444',
      'Total intrinsic merger rate at z=0 in Gpc⁻³ yr⁻¹'),
-    ('CHE', 'CHE', fmt_frac, None,
-     'Chemically homogeneous evolution channel fraction'),
-    ('SMT before and after channel', 'SMT', fmt_frac, None,
-     'Stable mass transfer (no common envelope) channel fraction'),
-    ('channel V intrinsic (z=0) other without CE', 'Other<br>no-CE', fmt_frac, None,
-     'Other non-CE channels (e.g. NON+NON)'),
-    ('channel I intrinsic (z=0) classic CE (SMT+CE)', 'Ch. I<br>SMT+CE', fmt_frac, None,
-     'Channel I: classic CE (SMT then CE) fraction'),
-    ('channel III intrinsic (z=0) SCCE', 'Ch. III<br>SCCE', fmt_frac, None,
-     'Channel III: single common-envelope (SCCE) fraction'),
-    ('channel IV intrinsic (z=0) DCCE', 'Ch. IV<br>DCCE', fmt_frac, None,
-     'Channel IV: double common-envelope (DCCE) fraction'),
-    ('channel V intrinsic (z=0) other with CE', 'Other<br>CE', fmt_frac, None,
+    ('CHE', 'CHE<br>(no MT)', fmt_frac, '#b8a0ff',
+     'Chemically homogeneous evolution (no mass transfer) channel fraction'),
+    ('SMT before and after channel', 'classic SMT<br>(SMT+SMT)', fmt_frac, '#FFA630',
+     'Classic stable mass transfer channel (SMT before and after)'),
+    ('channel V intrinsic (z=0) other without CE', 'other<br>without CE', fmt_frac, '#ffb5a7',
+     'Other non-CE channels'),
+    ('channel I intrinsic (z=0) classic CE (SMT+CE)', 'classic CE<br>(SMT+CE)', fmt_frac, '#00A7E1',
+     'Classic CE channel: stable mass transfer then common-envelope'),
+    ('channel III intrinsic (z=0) SCCE', 'single-core CE<br>(SCCE)', fmt_frac, '#0474BA',
+     'Single common-envelope (SCCE) channel fraction'),
+    ('channel IV intrinsic (z=0) DCCE', 'double-core CE<br>(DCCE)', fmt_frac, '#20b2aa',
+     'Double common-envelope (DCCE) channel fraction'),
+    ('channel V intrinsic (z=0) other with CE', 'other<br>with CE', fmt_frac, '#8dd3c7',
      'Other CE channels fraction'),
-    ('fraction without common envelope', 'f(no CE)', fmt_frac, None,
+    ('fraction without common envelope', 'without<br>common envelope', fmt_frac, '#FFA630',
      'Total fraction of systems formed without common envelope'),
-    ('fraction with common envelope', 'f(CE)', fmt_frac, None,
+    ('fraction with common envelope', 'with<br>common envelope', fmt_frac, '#00A7E1',
      'Total fraction of systems formed with common envelope'),
 ]
 
@@ -603,22 +618,23 @@ def render_rows():
             par.append(f'<td class="col-param param-cell">{txt}</td>')
 
         # rate section
-        def rate_section(dataset_row, cls, max_val, color):
+        def rate_section(dataset_row, cls, max_val, rate_color):
             if dataset_row is None:
                 return [f'<td class="col-{cls} no-data">—</td>'] * n_rate
             cells = []
-            for col_key, _, fmt_fn, _, _ in RATE_COLS:
+            for col_key, _, fmt_fn, ch_color, _ in RATE_COLS:
                 val = dataset_row.get(col_key, '')
                 if col_key == 'All intrinsic (z=0) [Gpc^-3 yr^-1]':
                     fv = frac_val(val)
                     a = (0.1 + min(fv / max_val, 1.0) * 0.5) if fv else 0
-                    style = f' style="background:rgba({color},{a:.3f})"' if fv else ''
+                    style = f' style="background:rgba({rate_color},{a:.3f})"' if fv else ''
                     cells.append(f'<td class="col-{cls}"{style}>{fmt_fn(val)}</td>')
                 else:
                     fv = frac_val(val)
                     if fv and fv > 0:
-                        a = min(fv, 1.0) * 0.55
-                        cells.append(f'<td class="col-{cls}" style="background:rgba(255,140,0,{a:.3f})">{fmt_fn(val)}</td>')
+                        r, g, b = hex_to_rgb(ch_color)
+                        a = 0.15 + min(fv, 1.0) * 0.6
+                        cells.append(f'<td class="col-{cls}" style="background:rgba({r},{g},{b},{a:.3f})">{fmt_fn(val)}</td>')
                     else:
                         cells.append(f'<td class="col-{cls}">{fmt_fn(val)}</td>')
             return cells
@@ -661,12 +677,20 @@ grp1 = (
     + th2('NS–NS Formation Channels', 'hdr-nsns', colspan=n_rate_)
 )
 
+def th_rate_col(label, fc_color, grp_cls, tooltip=''):
+    """Sub-header cell with inline background color from fc_dict palette."""
+    bg = lighten(fc_color, t=0.40)
+    txt = text_on(bg)
+    tt = f' title="{escape(tooltip)}"' if tooltip else ''
+    return (f'<th class="{grp_cls}" style="background:{bg};color:{txt};'
+            f'font-size:11px;line-height:1.3;font-weight:600;" data-sort="true"{tt}>{label}</th>')
+
 grp2 = (
-    ''.join(th2(dn, 'hdr-pub-col', tt, sort=True)  for _, dn, _, tt in SPEC_PUB_COLS)
+    ''.join(th2(dn, 'hdr-pub-col',   tt, sort=True) for _, dn, _, tt in SPEC_PUB_COLS)
     + ''.join(th2(dn, 'hdr-param-col', tt, sort=True) for _, dn, _, tt in SPEC_PARAM_COLS)
-    + ''.join(th2(dn, 'hdr-bhbh-col', tt, sort=True)  for _, dn, _, _, tt in RATE_COLS)
-    + ''.join(th2(dn, 'hdr-bhns-col', tt, sort=True)  for _, dn, _, _, tt in RATE_COLS)
-    + ''.join(th2(dn, 'hdr-nsns-col', tt, sort=True)  for _, dn, _, _, tt in RATE_COLS)
+    + ''.join(th_rate_col(dn, col, 'hdr-bhbh-col', tt) for _, dn, _, col, tt in RATE_COLS)
+    + ''.join(th_rate_col(dn, col, 'hdr-bhns-col', tt) for _, dn, _, col, tt in RATE_COLS)
+    + ''.join(th_rate_col(dn, col, 'hdr-nsns-col', tt) for _, dn, _, col, tt in RATE_COLS)
 )
 
 rows_final = render_rows()
@@ -850,8 +874,9 @@ td.no-data {{ color: #ccc; }}
   margin-right: auto;
   margin-top: 12px;
 }}
-.legend-item {{ font-size: 11.5px; color: #555; }}
+.legend-item {{ font-size: 11.5px; color: #555; display:flex; align-items:center; gap:5px; }}
 .legend-item b {{ color: #333; }}
+.swatch {{ display:inline-block; width:12px; height:12px; border-radius:3px; flex-shrink:0; border:1px solid rgba(0,0,0,.15); }}
 </style>
 </head>
 <body>
@@ -863,8 +888,8 @@ td.no-data {{ color: #ccc; }}
     <strong>BH–BH</strong>, <strong>BH–NS</strong>, and <strong>NS–NS</strong> binaries
     from <strong>{len(all_models)} population-synthesis models</strong> across multiple studies.
     Channel fractions are evaluated at redshift <em>z</em>&nbsp;=&nbsp;0.
-    Percentage values in orange shading scale linearly with the channel fraction.
-    Rate columns are shaded by their value relative to the maximum across all models for that binary type.
+    Cell shading for each channel uses its own color (matching the formation-channel figures) and scales with the fraction value.
+    Rate columns are shaded relative to the maximum across all models for that binary type.
     Click any column header to sort. Use the toggles to hide/show column groups.
     Model names link to the source paper.
   </p>
@@ -896,13 +921,15 @@ td.no-data {{ color: #ccc; }}
 </div>
 
 <div class="legend">
-  <div class="legend-item"><b>Ch. I:</b> SMT + CE (stable mass transfer then common-envelope)</div>
-  <div class="legend-item"><b>Ch. III:</b> SCCE — single common-envelope</div>
-  <div class="legend-item"><b>Ch. IV:</b> DCCE — double common-envelope</div>
-  <div class="legend-item"><b>SMT:</b> stable mass transfer only (no CE)</div>
-  <div class="legend-item"><b>CHE:</b> chemically homogeneous evolution</div>
-  <div class="legend-item"><b>f(no CE) / f(CE):</b> total fraction without / with CE</div>
-  <div class="legend-item"><b>Rate:</b> intrinsic merger rate [Gpc⁻³ yr⁻¹] at <em>z</em> = 0</div>
+  <div class="legend-item"><span class="swatch" style="background:#b8a0ff"></span><b>CHE (no MT):</b> chemically homogeneous evolution</div>
+  <div class="legend-item"><span class="swatch" style="background:#FFA630"></span><b>classic SMT (SMT+SMT):</b> stable mass transfer, no CE</div>
+  <div class="legend-item"><span class="swatch" style="background:#ffb5a7"></span><b>other without CE:</b> other non-CE channels</div>
+  <div class="legend-item"><span class="swatch" style="background:#00A7E1"></span><b>classic CE (SMT+CE):</b> stable MT then common-envelope</div>
+  <div class="legend-item"><span class="swatch" style="background:#0474BA"></span><b>single-core CE (SCCE):</b> one evolved star in CE</div>
+  <div class="legend-item"><span class="swatch" style="background:#20b2aa"></span><b>double-core CE (DCCE):</b> both cores in CE simultaneously</div>
+  <div class="legend-item"><span class="swatch" style="background:#8dd3c7"></span><b>other with CE:</b> other CE channels</div>
+  <div class="legend-item"><span class="swatch" style="background:#FFA630"></span><b>without common envelope:</b> total f(no CE)</div>
+  <div class="legend-item"><span class="swatch" style="background:#00A7E1"></span><b>with common envelope:</b> total f(CE)</div>
   <div class="legend-item"><b>—:</b> not reported / zero</div>
 </div>
 
