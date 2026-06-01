@@ -93,7 +93,7 @@ td.no-data{color:#ccc}
 .truncated{cursor:help;border-bottom:1px dotted #999}
 .col-hidden{display:none!important}
 .footer{max-width:1500px;margin:16px auto 0;font-size:11.5px;color:#888;line-height:1.55}
-.legend{display:flex;gap:14px;flex-wrap:wrap;padding:10px 14px;background:#fff;border-radius:8px;border:1px solid #e0e4ef;max-width:1500px;margin:12px auto 0}
+.legend{display:flex;gap:14px;flex-wrap:wrap;padding:10px 14px;background:#fff;border-radius:8px;border:1px solid #e0e4ef;max-width:1500px;margin:0 auto 14px}
 .legend-item{font-size:11.5px;color:#555;display:flex;align-items:center;gap:5px}
 .legend-item b{color:#333}
 .swatch{display:inline-block;width:12px;height:12px;border-radius:3px;flex-shrink:0;border:1px solid rgba(0,0,0,.15)}
@@ -126,6 +126,17 @@ td.no-data{color:#ccc}
     <button class="toggle-btn nsns active"  onclick="toggleGroup('nsns')">NS–NS Channels</button>
   </div>
   <span class="row-count" id="row-count">Showing 129 of 129 models</span>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><span class="swatch" style="background:#b8a0ff"></span><b>CHE (no MT):</b> chemically homogeneous evolution</div>
+  <div class="legend-item"><span class="swatch" style="background:#FFA630"></span><b>classic SMT (SMT+SMT):</b> stable mass transfer, no CE</div>
+  <div class="legend-item"><span class="swatch" style="background:#ffb5a7"></span><b>other without CE:</b> other non-CE channels</div>
+  <div class="legend-item"><span class="swatch" style="background:#00A7E1"></span><b>classic CE (SMT+CE):</b> stable MT then common-envelope</div>
+  <div class="legend-item"><span class="swatch" style="background:#0474BA"></span><b>single-core CE (SCCE):</b> one evolved star in CE</div>
+  <div class="legend-item"><span class="swatch" style="background:#20b2aa"></span><b>double-core CE (DCCE):</b> both cores in CE simultaneously</div>
+  <div class="legend-item"><span class="swatch" style="background:#8dd3c7"></span><b>other with CE:</b> other CE channels</div>
+  <div class="legend-item"><b>—:</b> not reported / zero</div>
 </div>
 
 <div class="table-wrap">
@@ -268,20 +279,9 @@ td.no-data{color:#ccc}
 </table>
 </div>
 
-<div class="legend">
-  <div class="legend-item"><span class="swatch" style="background:#b8a0ff"></span><b>CHE (no MT):</b> chemically homogeneous evolution</div>
-  <div class="legend-item"><span class="swatch" style="background:#FFA630"></span><b>classic SMT (SMT+SMT):</b> stable mass transfer, no CE</div>
-  <div class="legend-item"><span class="swatch" style="background:#ffb5a7"></span><b>other without CE:</b> other non-CE channels</div>
-  <div class="legend-item"><span class="swatch" style="background:#00A7E1"></span><b>classic CE (SMT+CE):</b> stable MT then common-envelope</div>
-  <div class="legend-item"><span class="swatch" style="background:#0474BA"></span><b>single-core CE (SCCE):</b> one evolved star in CE</div>
-  <div class="legend-item"><span class="swatch" style="background:#20b2aa"></span><b>double-core CE (DCCE):</b> both cores in CE simultaneously</div>
-  <div class="legend-item"><span class="swatch" style="background:#8dd3c7"></span><b>other with CE:</b> other CE channels</div>
-  <div class="legend-item"><b>—:</b> not reported / zero</div>
-</div>
-
 <div class="footer">
   Table generated from population-synthesis review data (Broekgaarden et al. 2026).
-  For questions or corrections, contact Floor Broekgaarden.
+  For questions or corrections, contact <a href="https://floorbroekgaarden.github.io/" target="_blank" style="color:#3a6ea5;">Floor Broekgaarden</a>.
 </div>
 
 <script>
