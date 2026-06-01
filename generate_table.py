@@ -515,13 +515,13 @@ td.no-data{{color:#ccc}}
 .legend-item b{{color:#333}}
 .swatch{{display:inline-block;width:12px;height:12px;border-radius:3px;flex-shrink:0;border:1px solid rgba(0,0,0,.15)}}
 /* ── interactive figures section ── */
-.figs-section{{max-width:1500px;margin:40px auto 0}}
+.figs-section{{margin:40px 0 0}}
 .figs-section h2{{font-size:1.25rem;font-weight:700;color:#1a1a2e;padding-bottom:10px;border-bottom:2px solid #e0e4ef;margin-bottom:6px}}
 .figs-section .sec-intro{{font-size:0.875rem;color:#555;line-height:1.6;margin-bottom:24px;max-width:860px}}
-.fig-block{{margin-bottom:40px}}
+.fig-block{{margin-bottom:48px}}
 .fig-block h3{{font-size:1rem;font-weight:700;color:#2c3e50;margin-bottom:4px}}
 .fig-block .fig-caption{{font-size:0.82rem;color:#666;line-height:1.55;margin-bottom:10px;max-width:860px}}
-.fig-block iframe{{width:100%;border:1px solid #e0e4ef;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.09);display:block}}
+.fig-block iframe{{width:100%;border:1px solid #e0e4ef;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.09);display:block;scrolling:no}}
 </style>
 </head>
 <body>
@@ -592,7 +592,7 @@ td.no-data{{color:#ccc}}
       Each point represents one model; colors distinguish studies. Lines connect models within the
       same study that vary a single parameter, illustrating the parameter sensitivity within each framework.
     </p>
-    <iframe src="Fig9_BH-BH_by_study_interactive.html" height="850" loading="lazy"></iframe>
+    <iframe src="Fig9_BH-BH_by_study_interactive.html" height="950" scrolling="no" loading="lazy"></iframe>
   </div>
 
   <div class="fig-block">
@@ -600,15 +600,7 @@ td.no-data{{color:#ccc}}
     <p class="fig-caption">
       Same as Figure 9 for BH–NS mergers.
     </p>
-    <iframe src="Fig10_BH-NS_by_study_interactive.html" height="850" loading="lazy"></iframe>
-  </div>
-
-  <div class="fig-block">
-    <h3>Figure 11 — BNS: intrinsic merger rate vs. formation-channel fraction, by study</h3>
-    <p class="fig-caption">
-      Same as Figure 9 for NS–NS (BNS) mergers.
-    </p>
-    <iframe src="Fig11_NS-NS_by_study_interactive.html" height="850" loading="lazy"></iframe>
+    <iframe src="Fig10_BH-NS_by_study_interactive.html" height="950" scrolling="no" loading="lazy"></iframe>
   </div>
 
   <div class="fig-block">
@@ -621,7 +613,7 @@ td.no-data{{color:#ccc}}
       within a given study. Points are individual models; horizontal lines span the range of
       variation within each parameter family.
     </p>
-    <iframe src="Fig12_BH-BH_withoutCE_fraction_vs_parameters_interactive.html" height="1100" loading="lazy"></iframe>
+    <iframe src="Fig12_BH-BH_withoutCE_fraction_vs_parameters_interactive.html" height="1120" scrolling="no" loading="lazy"></iframe>
   </div>
 
   <div class="fig-block">
@@ -629,7 +621,7 @@ td.no-data{{color:#ccc}}
     <p class="fig-caption">
       Same as Figure 12 for BH–NS mergers.
     </p>
-    <iframe src="Fig13_BH-NS_withoutCE_fraction_vs_parameters_interactive.html" height="1100" loading="lazy"></iframe>
+    <iframe src="Fig13_BH-NS_withoutCE_fraction_vs_parameters_interactive.html" height="1120" scrolling="no" loading="lazy"></iframe>
   </div>
 </section>
 
