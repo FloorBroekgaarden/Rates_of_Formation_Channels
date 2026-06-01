@@ -1,0 +1,105 @@
+{
+  "upload_type": "software",
+  "title": "How Common Are Common Envelopes? Quantifying Their Role in Forming Gravitational-Wave Sources — Data and Code",
+  "description": "<p>This repository contains all data, plotting code, and interactive figures associated with the paper <em>\"How Common Are Common Envelopes? Quantifying Their Role in Forming Gravitational-Wave Sources\"</em> by Broekgaarden et al. (2026).</p><p>The paper compiles and systematically compares formation-channel predictions from more than 200 isolated binary-evolution population-synthesis simulations for merging binary black hole (BBH), black hole–neutron star (BHNS), and binary neutron star (BNS) systems. Formation pathways are organized within a unified hierarchical taxonomy that separates systems evolving with and without common-envelope (CE) phases.</p><p><strong>Contents:</strong></p><ul><li>Formation channel fractions and intrinsic merger rates (z=0) for BBH, BHNS, and BNS from 129+ population-synthesis models across multiple codes (COMPAS, SEVN, POSYDON, MOBSE, StarTrack, and others)</li><li>Jupyter notebooks reproducing all figures in the paper (Figures 1–11)</li><li>Interactive HTML table of compiled rates, channel fractions, and simulation parameters</li><li>Simulation specification tables and source data CSVs</li></ul>",
+  "creators": [
+    {
+      "name": "Broekgaarden, Floor S.",
+      "affiliation": "University of California San Diego",
+      "orcid": "0000-0002-8587-7027"
+    },
+    {
+      "name": "Lam, Ana",
+      "affiliation": ""
+    },
+    {
+      "name": "Levina, Sasha",
+      "affiliation": ""
+    },
+    {
+      "name": "Klencki, Jakub",
+      "affiliation": ""
+    },
+    {
+      "name": "Rocha, Kyle A.",
+      "affiliation": ""
+    },
+    {
+      "name": "Grondin, Steffani M.",
+      "affiliation": ""
+    },
+    {
+      "name": "Gallegos-Garcia, Monica",
+      "affiliation": ""
+    },
+    {
+      "name": "Metzger, Brian D.",
+      "affiliation": ""
+    },
+    {
+      "name": "Twum, Angela",
+      "affiliation": ""
+    },
+    {
+      "name": "Ramirez-Ruiz, Enrico",
+      "affiliation": ""
+    },
+    {
+      "name": "Santiago, Melanie",
+      "affiliation": ""
+    },
+    {
+      "name": "van Son, Lieke",
+      "affiliation": ""
+    },
+    {
+      "name": "Haynes, Julia",
+      "affiliation": ""
+    },
+    {
+      "name": "Smith, Tyler B.",
+      "affiliation": ""
+    },
+    {
+      "name": "Romagnolo, Amedeo",
+      "affiliation": ""
+    },
+    {
+      "name": "de Sá, Lucas M.",
+      "affiliation": ""
+    },
+    {
+      "name": "Berger, Edo",
+      "affiliation": ""
+    }
+  ],
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "keywords": [
+    "gravitational waves",
+    "binary stars",
+    "common envelope",
+    "formation channels",
+    "binary black holes",
+    "neutron stars",
+    "population synthesis",
+    "compact binaries",
+    "binary evolution",
+    "merger rates",
+    "LIGO",
+    "GWTC"
+  ],
+  "version": "2.0",
+  "publication_date": "2026-06-01",
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.7815200",
+      "relation": "is-new-version-of",
+      "scheme": "doi"
+    }
+  ],
+  "references": [
+    "Broekgaarden et al. (2026), How Common Are Common Envelopes? Quantifying Their Role in Forming Gravitational-Wave Sources"
+  ]
+}
