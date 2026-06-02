@@ -423,9 +423,15 @@ html_final = f"""<!DOCTYPE html>
 <style>
 *,*::before,*::after{{box-sizing:border-box;margin:0;padding:0}}
 body{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;background:#f4f6f9;color:#1a1a2e;padding:24px 20px}}
-.page-header{{max-width:1500px;margin:0 auto 18px}}
-.page-header h1{{font-size:1.55rem;font-weight:700;color:#1a1a2e;margin-bottom:8px;letter-spacing:-.3px}}
+.page-header{{margin:0 0 18px}}
+.page-header h1{{font-size:1.55rem;font-weight:700;color:#1a1a2e;margin-bottom:6px;letter-spacing:-.3px}}
 .page-header p{{color:#555;line-height:1.6;max-width:900px;font-size:0.875rem}}
+.header-links{{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px}}
+.hdr-badge{{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;text-decoration:none;border:1.5px solid;transition:all .15s}}
+.hdr-badge.github{{border-color:#24292f;color:#24292f;background:#f6f8fa}}
+.hdr-badge.github:hover{{background:#24292f;color:#fff}}
+.hdr-badge.zenodo{{border-color:#1c6ca1;color:#1c6ca1;background:#eef5fb}}
+.hdr-badge.zenodo:hover{{background:#1c6ca1;color:#fff}}
 .controls{{max-width:1500px;margin:0 auto 14px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}}
 #search{{padding:7px 13px;border:1.5px solid #ccd;border-radius:20px;font-size:13px;width:240px;outline:none;transition:border-color .2s,box-shadow .2s}}
 #search:focus{{border-color:#3a6ea5;box-shadow:0 0 0 3px rgba(58,110,165,.15)}}
