@@ -393,8 +393,7 @@ IC_SUB   = '#9070c0'   # sub-header tint
 grp1 = (
     th2('Paper', 'hdr-paper', 'Source paper', rowspan=2)
     + th2('Model', 'hdr-model', 'Population-synthesis model identifier', rowspan=2)
-    + th2('Simulation Parameters', 'hdr-param', colspan=n_param)
-    + th2('Additional Physics', 'hdr-phys', colspan=n_phys)
+    + th2('Simulation Parameters', 'hdr-param', colspan=n_param + n_phys)
     + th2('Initial Conditions', 'hdr-ic', colspan=n_ic)
     + th2('BH–BH Formation Channels', 'hdr-bhbh', colspan=n_rate)
     + th2('BH–NS Formation Channels', 'hdr-bhns', colspan=n_rate)
@@ -508,6 +507,9 @@ tbody tr:nth-child(even) .phys-cell {{background:rgba(138,106,48,0.10)}}
 tbody tr:nth-child(even) .ic-cell   {{background:rgba(90,58,122,0.08)}}
 td.no-data{{color:#ccc}}
 .truncated{{cursor:help;border-bottom:1px dotted #999}}
+#tt-box{{position:fixed;background:#1a2332;color:#e8f4ff;padding:8px 12px;border-radius:6px;font-size:11.5px;line-height:1.55;max-width:380px;white-space:pre-wrap;z-index:99999;box-shadow:0 4px 14px rgba(0,0,0,.45);pointer-events:none;display:none;word-break:break-word}}
+.dl-btn{{padding:6px 14px;border-radius:20px;border:2px solid #3a6ea5;color:#3a6ea5;background:transparent;font-size:12px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:all .15s}}
+.dl-btn:hover{{background:#3a6ea5;color:#fff}}
 .col-hidden{{display:none!important}}
 .footer{{max-width:1500px;margin:16px auto 0;font-size:11.5px;color:#888;line-height:1.55}}
 .legend{{display:flex;gap:14px;flex-wrap:wrap;padding:10px 14px;background:#fff;border-radius:8px;border:1px solid #e0e4ef;max-width:1500px;margin:0 auto 14px}}
@@ -551,7 +553,9 @@ td.no-data{{color:#ccc}}
     <button class="toggle-btn nsns active"  onclick="toggleGroup('nsns')">NS–NS Channels</button>
   </div>
   <span class="row-count" id="row-count">Showing {len(all_models)} of {len(all_models)} models</span>
+  <a class="dl-btn" href="formation_channel_rates_table.csv" download>⬇ Download CSV</a>
 </div>
+<div id="tt-box"></div>
 
 <div class="legend">
   <div class="legend-item"><span class="swatch" style="background:#b8a0ff"></span><b>CHE (no MT):</b> chemically homogeneous evolution</div>
@@ -631,6 +635,30 @@ td.no-data{{color:#ccc}}
 </div>
 
 <script>
+// ── hover tooltip for truncated cells ────────────────────────────────────────
+const ttBox = document.getElementById('tt-box');
+document.addEventListener('mouseover', e => {{
+  const el = e.target.closest('.truncated');
+  if (el && el.title) {{
+    ttBox.textContent = el.title;
+    ttBox.style.display = 'block';
+  }}
+}});
+document.addEventListener('mousemove', e => {{
+  if (ttBox.style.display !== 'block') return;
+  const pad = 14, w = ttBox.offsetWidth, h = ttBox.offsetHeight;
+  const vw = window.innerWidth, vh = window.innerHeight;
+  let x = e.clientX + pad, y = e.clientY - h - pad;
+  if (x + w > vw - 8) x = e.clientX - w - pad;
+  if (y < 8) y = e.clientY + pad;
+  ttBox.style.left = x + 'px';
+  ttBox.style.top  = y + 'px';
+}});
+document.addEventListener('mouseout', e => {{
+  if (e.target.closest('.truncated')) ttBox.style.display = 'none';
+}});
+
+// ── column group toggles ──────────────────────────────────────────────────────
 const groupCols = {{
   param: () => document.querySelectorAll('.hdr-param,.hdr-param-col,.col-param'),
   phys:  () => document.querySelectorAll('.hdr-phys,.hdr-phys-col,.col-phys'),
@@ -692,15 +720,106 @@ out_path = OUT_DIR + 'formation_channel_rates_table.html'
 with open(out_path, 'w') as f:
     f.write(html_final)
 
+# ── generate CSV ──────────────────────────────────────────────────────────────
+csv_columns = [
+    # identification
+    ('Paper',                 lambda m, spec, bps_d, bh, bn, nn: PAPER_CITATIONS.get(spec.get('label_author',''), spec.get('label_author',''))),
+    ('Model',                 lambda m, spec, bps_d, bh, bn, nn: m),
+    ('Year',                  lambda m, spec, bps_d, bh, bn, nn: spec.get('year','')),
+    ('Code',                  lambda m, spec, bps_d, bh, bn, nn: spec.get('code','')),
+    ('Stellar_tracks',        lambda m, spec, bps_d, bh, bn, nn: spec.get('stellar_tracks','')),
+    ('Study_label',           lambda m, spec, bps_d, bh, bn, nn: spec.get('label_author','')),
+    ('Paper_link',            lambda m, spec, bps_d, bh, bn, nn: spec.get('link to paper','')),
+    # core simulation parameters
+    ('sigma_CCSN_km_s',       lambda m, spec, bps_d, bh, bn, nn: spec.get('sigma','')),
+    ('sigma_strippedSN_km_s', lambda m, spec, bps_d, bh, bn, nn: spec.get('sigma_strippedSN','')),
+    ('alpha_CE',              lambda m, spec, bps_d, bh, bn, nn: spec.get('alpha','')),
+    ('beta_MT',               lambda m, spec, bps_d, bh, bn, nn: spec.get('beta','')),
+    ('CE_optimistic_pessimistic', lambda m, spec, bps_d, bh, bn, nn: spec.get('CE optimistic/pessimistic','')),
+    ('CE_prescription',       lambda m, spec, bps_d, bh, bn, nn: spec.get('CE prescription','')),
+    ('lambda_CE',             lambda m, spec, bps_d, bh, bn, nn: spec.get('lambda','')),
+    ('PISN_prescription',     lambda m, spec, bps_d, bh, bn, nn: spec.get('PISN prescription','')),
+    ('MT_stability',          lambda m, spec, bps_d, bh, bn, nn: spec.get('stability','')),
+    ('RMP',                   lambda m, spec, bps_d, bh, bn, nn: spec.get('RMP','')),
+    # additional physics (from BPS HTML)
+    ('gamma_AM_loss',         lambda m, spec, bps_d, bh, bn, nn: bps_d.get('gamma','')),
+    ('AM_loss_mechanism',     lambda m, spec, bps_d, bh, bn, nn: bps_d.get('AM_loss','')),
+    ('Eddington_limited',     lambda m, spec, bps_d, bh, bn, nn: bps_d.get('Eddington','')),
+    ('f_WR',                  lambda m, spec, bps_d, bh, bn, nn: bps_d.get('f_WR','')),
+    ('alpha_CE_notes',        lambda m, spec, bps_d, bh, bn, nn: bps_d.get('alpha_notes','')),
+    ('HG_donor_CE_survival',  lambda m, spec, bps_d, bh, bn, nn: bps_d.get('HG_donor','')),
+    ('wind_prescription',     lambda m, spec, bps_d, bh, bn, nn: bps_d.get('wind','')),
+    ('tidal_prescription',    lambda m, spec, bps_d, bh, bn, nn: bps_d.get('tidal','')),
+    ('NS_remnant_mass',       lambda m, spec, bps_d, bh, bn, nn: bps_d.get('NS_remnant','')),
+    # initial conditions (from BPS HTML)
+    ('IMF',                   lambda m, spec, bps_d, bh, bn, nn: bps_d.get('IMF','')),
+    ('initial_period_dist',   lambda m, spec, bps_d, bh, bn, nn: bps_d.get('period_dist','')),
+    ('mass_ratio_dist',       lambda m, spec, bps_d, bh, bn, nn: bps_d.get('mass_ratio','')),
+    ('f_bin',                 lambda m, spec, bps_d, bh, bn, nn: bps_d.get('f_bin','')),
+    ('metallicity_range',     lambda m, spec, bps_d, bh, bn, nn: bps_d.get('metallicity','')),
+    ('SFR_model',             lambda m, spec, bps_d, bh, bn, nn: bps_d.get('SFR','')),
+    ('max_NS_mass_Msun',      lambda m, spec, bps_d, bh, bn, nn: bps_d.get('max_NS_mass','')),
+    ('sigma_ECSN_km_s',       lambda m, spec, bps_d, bh, bn, nn: bps_d.get('sigma_ECSN','')),
+    # BH-BH channels
+    ('BHBH_rate_Gpc3yr',         lambda m, spec, bps_d, bh, bn, nn: (bh or {}).get('All intrinsic (z=0) [Gpc^-3 yr^-1]','')),
+    ('BHBH_frac_CHE',            lambda m, spec, bps_d, bh, bn, nn: (bh or {}).get('CHE','')),
+    ('BHBH_frac_SMT',            lambda m, spec, bps_d, bh, bn, nn: (bh or {}).get('SMT before and after channel','')),
+    ('BHBH_frac_other_noCE',     lambda m, spec, bps_d, bh, bn, nn: (bh or {}).get('channel V intrinsic (z=0) other without CE','')),
+    ('BHBH_frac_classicCE',      lambda m, spec, bps_d, bh, bn, nn: (bh or {}).get('channel I intrinsic (z=0) classic CE (SMT+CE)','')),
+    ('BHBH_frac_SCCE',           lambda m, spec, bps_d, bh, bn, nn: (bh or {}).get('channel III intrinsic (z=0) SCCE','')),
+    ('BHBH_frac_DCCE',           lambda m, spec, bps_d, bh, bn, nn: (bh or {}).get('channel IV intrinsic (z=0) DCCE','')),
+    ('BHBH_frac_other_CE',       lambda m, spec, bps_d, bh, bn, nn: (bh or {}).get('channel V intrinsic (z=0) other with CE','')),
+    ('BHBH_total_frac_noCE',     lambda m, spec, bps_d, bh, bn, nn: (bh or {}).get('fraction without common envelope','')),
+    ('BHBH_total_frac_CE',       lambda m, spec, bps_d, bh, bn, nn: (bh or {}).get('fraction with common envelope','')),
+    # BH-NS channels
+    ('BHNS_rate_Gpc3yr',         lambda m, spec, bps_d, bh, bn, nn: (bn or {}).get('All intrinsic (z=0) [Gpc^-3 yr^-1]','')),
+    ('BHNS_frac_CHE',            lambda m, spec, bps_d, bh, bn, nn: (bn or {}).get('CHE','')),
+    ('BHNS_frac_SMT',            lambda m, spec, bps_d, bh, bn, nn: (bn or {}).get('SMT before and after channel','')),
+    ('BHNS_frac_other_noCE',     lambda m, spec, bps_d, bh, bn, nn: (bn or {}).get('channel V intrinsic (z=0) other without CE','')),
+    ('BHNS_frac_classicCE',      lambda m, spec, bps_d, bh, bn, nn: (bn or {}).get('channel I intrinsic (z=0) classic CE (SMT+CE)','')),
+    ('BHNS_frac_SCCE',           lambda m, spec, bps_d, bh, bn, nn: (bn or {}).get('channel III intrinsic (z=0) SCCE','')),
+    ('BHNS_frac_DCCE',           lambda m, spec, bps_d, bh, bn, nn: (bn or {}).get('channel IV intrinsic (z=0) DCCE','')),
+    ('BHNS_frac_other_CE',       lambda m, spec, bps_d, bh, bn, nn: (bn or {}).get('channel V intrinsic (z=0) other with CE','')),
+    ('BHNS_total_frac_noCE',     lambda m, spec, bps_d, bh, bn, nn: (bn or {}).get('fraction without common envelope','')),
+    ('BHNS_total_frac_CE',       lambda m, spec, bps_d, bh, bn, nn: (bn or {}).get('fraction with common envelope','')),
+    # NS-NS channels
+    ('NSNS_rate_Gpc3yr',         lambda m, spec, bps_d, bh, bn, nn: (nn or {}).get('All intrinsic (z=0) [Gpc^-3 yr^-1]','')),
+    ('NSNS_frac_CHE',            lambda m, spec, bps_d, bh, bn, nn: (nn or {}).get('CHE','')),
+    ('NSNS_frac_SMT',            lambda m, spec, bps_d, bh, bn, nn: (nn or {}).get('SMT before and after channel','')),
+    ('NSNS_frac_other_noCE',     lambda m, spec, bps_d, bh, bn, nn: (nn or {}).get('channel V intrinsic (z=0) other without CE','')),
+    ('NSNS_frac_classicCE',      lambda m, spec, bps_d, bh, bn, nn: (nn or {}).get('channel I intrinsic (z=0) classic CE (SMT+CE)','')),
+    ('NSNS_frac_SCCE',           lambda m, spec, bps_d, bh, bn, nn: (nn or {}).get('channel III intrinsic (z=0) SCCE','')),
+    ('NSNS_frac_DCCE',           lambda m, spec, bps_d, bh, bn, nn: (nn or {}).get('channel IV intrinsic (z=0) DCCE','')),
+    ('NSNS_frac_other_CE',       lambda m, spec, bps_d, bh, bn, nn: (nn or {}).get('channel V intrinsic (z=0) other with CE','')),
+    ('NSNS_total_frac_noCE',     lambda m, spec, bps_d, bh, bn, nn: (nn or {}).get('fraction without common envelope','')),
+    ('NSNS_total_frac_CE',       lambda m, spec, bps_d, bh, bn, nn: (nn or {}).get('fraction with common envelope','')),
+]
+
+def csv_escape(v):
+    v = str(v).replace('\n', ' ').replace('\r', '')
+    if ',' in v or '"' in v:
+        v = '"' + v.replace('"', '""') + '"'
+    return v
+
+csv_path = OUT_DIR + 'formation_channel_rates_table.csv'
+with open(csv_path, 'w', encoding='utf-8') as cf:
+    cf.write(','.join(col for col, _ in csv_columns) + '\n')
+    for m in all_models:
+        spec  = specs_by.get(m, {})
+        bps_d = bps.get(m, {})
+        bh    = bhbh_by.get(m)
+        bn    = bhns_by.get(m)
+        nn    = nsns_by.get(m)
+        row   = [csv_escape(fn(m, spec, bps_d, bh, bn, nn)) for _, fn in csv_columns]
+        cf.write(','.join(row) + '\n')
+
 print(f'Written: {out_path}')
+print(f'Written: {csv_path}')
 print(f'Models: {len(all_models)}')
 print(f'BPS data loaded for {len(bps)} models')
 print(f'BH-BH: {sum(1 for m in all_models if m in bhbh_by)}  '
       f'BH-NS: {sum(1 for m in all_models if m in bhns_by)}  '
       f'NS-NS: {sum(1 for m in all_models if m in nsns_by)}')
-# Spot-check a few BPS values
 sample = next(iter(bps))
-print(f'Sample BPS model: {sample}')
-print(f'  IMF: {bps[sample].get("IMF","?")}')
-print(f'  SFR: {bps[sample].get("SFR","?")}')
-print(f'  gamma: {bps[sample].get("gamma","?")}')
+print(f'Sample BPS model: {sample}  IMF: {bps[sample].get("IMF","?")}')
+print(f'CSV columns: {len(csv_columns)}')
