@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Compact Binary Formation Channel Rates — Simulation Survey</title>
+<title>How Common Are Common Envelopes? — Broekgaarden et al. (2026)</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;background:#f4f6f9;color:#1a1a2e;padding:24px 20px}
@@ -132,6 +132,12 @@ html{scroll-behavior:smooth}
 .nav-sep{color:#ddd;padding:0 2px;font-size:16px;line-height:1;user-select:none}
 .nav-label{font-size:11px;color:#aaa;font-weight:600;letter-spacing:.4px;white-space:nowrap}
 #table-section,#fig2,#fig3,#fig4,#fig5,#fig9,#fig10,#fig12,#fig13,#fig15{scroll-margin-top:54px}
+.tab-bar{display:flex;border-bottom:2px solid #e0e4ef;margin-top:4px}
+.tab-btn{padding:10px 22px;font-size:13px;font-weight:700;border:none;background:none;cursor:pointer;color:#555;border-bottom:3px solid transparent;margin-bottom:-2px;border-radius:6px 6px 0 0;transition:all .15s;letter-spacing:.2px}
+.tab-btn.active{color:#1a237e;border-bottom-color:#1a237e;background:#f0f4ff}
+.tab-btn:hover:not(.active){color:#333;background:#f5f5f5}
+.tab-panel{display:none;padding-top:20px}
+.tab-panel.active{display:block}
 </style>
 </head>
 <body>
@@ -147,16 +153,7 @@ html{scroll-behavior:smooth}
       Zenodo&nbsp;DOI:&nbsp;10.5281/zenodo.7815200
     </a>
   </div>
-  <h1>Compact Binary Merger Rates and Formation Channels — Simulation Survey</h1>
-  <p>
-    Combined table of simulated intrinsic merger rates, formation channel fractions, and model assumptions for
-    <strong>BH–BH</strong>, <strong>BH–NS</strong>, and <strong>NS–NS</strong> binaries
-    from <strong>129 population-synthesis models</strong> across 17 studies.
-    Channel fractions are evaluated at redshift <em>z</em>&nbsp;=&nbsp;0.
-    Cell shading for each channel uses its own color and scales with the fraction value.
-    Click any column header to sort. Use the toggles to hide/show column groups.
-    Paper column and model names link to the source paper.
-  </p>
+  <h1>How Common Are Common Envelopes? Quantifying Their Role in Forming Gravitational-Wave Sources — Broekgaarden et al. (2026) Interactive Table and Figures</h1>
 </div>
 
 <nav class="jump-nav">
@@ -183,6 +180,22 @@ html{scroll-behavior:smooth}
   <span class="nav-label">EFFICIENCY</span>
   <a class="j-bhbh" href="#fig15">Fig 14/15 — Formation efficiency</a>
 </nav>
+
+<div style="height:20px"></div>
+<div class="tab-container">
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('table-tab', this)">📊 Table with Formation Channel data</button>
+  </div>
+  <div id="table-tab" class="tab-panel active">
+    <p>
+      Combined table of simulated intrinsic merger rates, formation channel fractions, and model assumptions for
+      <strong>BH–BH</strong>, <strong>BH–NS</strong>, and <strong>NS–NS</strong> binaries
+      from over 200 population-synthesis rates.
+      Channel fractions are evaluated at redshift <em>z</em>&nbsp;=&nbsp;0.
+      Cell shading for each channel uses its own color and scales with the fraction value.
+      Click any column header to sort. Use the toggles to hide/show column groups.
+      Paper column and model names link to the source paper.
+    </p>
 
 <div id="table-section" class="controls">
   <input type="text" id="search" placeholder="🔍  Filter by model, study, or parameter…" oninput="filterTable()">
@@ -352,6 +365,9 @@ html{scroll-behavior:smooth}
 </table>
 </div>
 
+  </div><!-- end tab-panel -->
+</div><!-- end tab-container -->
+
 <section class="figs-section">
   <h2>Interactive Figures</h2>
   <p class="sec-intro">
@@ -512,6 +528,12 @@ html{scroll-behavior:smooth}
 </div>
 
 <script>
+function switchTab(panelId, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(panelId).classList.add('active');
+  btn.classList.add('active');
+}
 // ── simple / detailed toggle for Figs 3, 4, 5 ───────────────────────────────
 function showFC(fig, view, btn) {
   ['simple','detailed'].forEach(v => {
