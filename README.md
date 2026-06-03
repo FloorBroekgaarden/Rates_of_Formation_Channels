@@ -18,6 +18,7 @@ The page includes an interactive data table and the following interactive figure
 
 | Figure | Description |
 |---|---|
+| [Fig 2 — All DCOs](https://floorbroekgaarden.github.io/Rates_of_Formation_Channels/interactive_figures_and_tables/formation_channel_rates_table.html#fig2) | CE / no-CE fraction summary for all BBH, BHNS, and BNS models on three horizontal lanes (toggle: x = without CE / with CE) |
 | [Fig 3 — BBH](https://floorbroekgaarden.github.io/Rates_of_Formation_Channels/interactive_figures_and_tables/formation_channel_rates_table.html#fig3) | Formation-channel fractions and merger rates for all BBH models (toggle: simple / detailed) |
 | [Fig 4 — BHNS](https://floorbroekgaarden.github.io/Rates_of_Formation_Channels/interactive_figures_and_tables/formation_channel_rates_table.html#fig4) | Formation-channel fractions and merger rates for all BHNS models (toggle: simple / detailed) |
 | [Fig 5 — BNS](https://floorbroekgaarden.github.io/Rates_of_Formation_Channels/interactive_figures_and_tables/formation_channel_rates_table.html#fig5) | Formation-channel fractions and merger rates for all BNS models (toggle: simple / detailed) |
