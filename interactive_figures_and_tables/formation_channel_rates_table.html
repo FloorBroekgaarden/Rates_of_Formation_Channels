@@ -131,7 +131,7 @@ html{scroll-behavior:smooth}
 .j-bns{border-color:#1b5e20;color:#1b5e20}.j-bns:hover{background:#1b5e20!important}
 .nav-sep{color:#ddd;padding:0 2px;font-size:16px;line-height:1;user-select:none}
 .nav-label{font-size:11px;color:#aaa;font-weight:600;letter-spacing:.4px;white-space:nowrap}
-#table-section,#fig3,#fig4,#fig5,#fig9,#fig10,#fig12,#fig13{scroll-margin-top:54px}
+#table-section,#fig2,#fig3,#fig4,#fig5,#fig9,#fig10,#fig12,#fig13{scroll-margin-top:54px}
 </style>
 </head>
 <body>
@@ -355,6 +355,30 @@ html{scroll-behavior:smooth}
     pan with the Plotly toolbar. Figures 3–5 offer a <strong>Simple</strong> view (CE vs. no-CE)
     and a <strong>Detailed</strong> view (individual channels); use the toggle to switch.
   </p>
+
+  <!-- ── Figure 2: formation-channel summary (three DCOs) ── -->
+  <div id="fig2" class="fig-block">
+    <h3>Figure 2 — Formation-channel summary: all BBH, BHNS, and BNS models</h3>
+    <p class="fig-caption">
+      Each point is one population-synthesis model. The three horizontal lanes correspond to
+      BBH (top), BHNS (middle), and BNS (bottom). The x-axis shows the fraction of mergers
+      forming via the selected pathway; the mirrored top axis shows the complementary fraction.
+      Hover over any point to see the paper, model name, merger rate, and all three
+      simple formation-channel fractions (without CE, with CE, not specified).
+      Toggle between the two x-axis orientations below.
+    </p>
+    <div class="fc-toggle">
+      <span class="toggle-label">x-axis:</span>
+      <button class="fc-btn active" onclick="showFC('fig2','noCE',this)">without CE fraction</button>
+      <button class="fc-btn"        onclick="showFC('fig2','withCE',this)">with CE fraction</button>
+    </div>
+    <div id="fig2-noCE">
+      <iframe src="Fig2_withoutCE_fraction_interactive.html" height="460" loading="lazy"></iframe>
+    </div>
+    <div id="fig2-withCE" style="display:none">
+      <iframe src="Fig2_withCE_fraction_interactive.html" height="460" loading="lazy"></iframe>
+    </div>
+  </div>
 
   <!-- ── Figure 3: BBH formation channels ── -->
   <div id="fig3" class="fig-block">
