@@ -35,9 +35,10 @@ The page includes an interactive data table and the following interactive figure
 ```
 Rates_of_Formation_Channels/
 ├── papers/                            # PDFs of key source papers
-├── plottingCode/                      # Code to reproduce all figures
-├── other_data/                        # Additional code to retrieve and process data
-└── interactive_figures_and_tables/    # Interactive HTML table
+├── plottingCode/                      # Notebooks to reproduce all figures
+├── fc_data/                           # Compiled formation-channel data
+├── figures/                           # Output PDF figures
+└── interactive_figures_and_tables/    # Interactive HTML table and figures
 ```
 
 ### `papers/`
@@ -46,29 +47,36 @@ Contains PDF copies of several of the key papers that are sources in this study,
 
 ### `plottingCode/`
 
-Contains Jupyter notebooks to reproduce all results and recreate every figure in the paper. Notebooks are organized by figure number:
+Contains Jupyter notebooks to reproduce all results and recreate every figure in the paper. Each figure has a standard notebook and an `_interactive` variant that generates the interactive HTML figures hosted online.
 
 | Notebook | Figures |
 |---|---|
-| `Figure1_schematic_files_to_create_plot/` | Figure 1 — Hierarchical formation-channel taxonomy schematic |
+| `Figure1_schematic_formation_channel_taxonomy/` | Figure 1 — Hierarchical formation-channel taxonomy schematic |
 | `Figure_2_formation_channels_contribution_summary.ipynb` | Figure 2 — Global overview of Level 1 formation-channel diversity across all compiled simulations |
-| `Figure_3_4_5_and_extra.ipynb` | Figures 3–5 — Level 1 fractional contributions and intrinsic merger rates for BBH, BHNS, and BNS |
-| `Figure_6_7_8_9_and_10_and_extra.ipynb` | Figures 6–10 — Level 2 subchannel decomposition and parameter-dependency analysis for BBH, BHNS, and BNS |
-| `Figure_11_and_appendix_Formation_Efficiency_formation_channel_contribution.ipynb` | Figure 11 + appendix — Formation efficiency and formation-channel contributions |
-| `rates_figure_formation_channels.ipynb` | Additional rates figures |
+| `Figure_2_formation_channels_contribution_summary_interactive.ipynb` | Figure 2 — Interactive version |
+| `Figure_3_4_5_6_7_8_and_extra.ipynb` | Figures 3–8 — Level 1 & 2 fractional contributions and intrinsic merger rates for BBH, BHNS, and BNS |
+| `Figure_3_4_5_6_7_8_and_extra_interactive.ipynb` | Figures 3–8 — Interactive version |
+| `Figure_9_10_11_12_and_13_and_extra.ipynb` | Figures 9–13 — Merger rate vs. formation-channel fraction and parameter-dependence analysis |
+| `Figure_14_and_appendix_Formation_Efficiency_formation_channel_contribution.ipynb` | Figures 14/15 + appendix — Formation efficiency and formation-channel contributions as a function of metallicity |
+| `Figure_14_and_appendix_Formation_Efficiency_formation_channel_contribution_interactive.ipynb` | Figures 14/15 — Interactive version |
 
-Output figures are saved to `plottingCode/All_Figures/Output_Figures/`.
+### `fc_data/`
 
-### `other_data/`
+Contains all compiled formation-channel data used in the paper:
 
-Contains additional code used to retrieve and process data from external sources:
+- **`Data_formation_channels_intrinsic/`** — Main compiled dataset: CSV files with intrinsic merger rates and formation-channel fractions for BH–BH, BH–NS, and NS–NS systems from all 200+ population-synthesis simulations (`BH-BH_rates_review.csv`, `BH-NS_rates_review.csv`, `NS-NS_rates_review.csv`, and associated `fcRelations` files). Also contains `simulation_specs.csv` with model parameters for all studies.
+- **`data_for_formation_efficiency/`** — Data used for the formation efficiency figures (Figures 14/15), including formation-channel fractions as a function of metallicity from Broekgaarden et al. (2022), Iorio et al. simulations, and van Son et al. (2023).
+- **`other_data/`** — Additional scripts and data to retrieve or process results from specific studies:
+  - `Briel2022/` — Data files for Briel et al. (2022).
+  - `Calculate_formation_channels_Boesky/` — Notebook and output CSV files to calculate formation-channel fractions from Boesky et al. (2024) data.
 
-- **`Briel2022/`** — Scripts and data files for extracting formation-channel rates from Briel et al. (2022).
-- **`Calculate_formation_channels_Boesky/`** — Notebook (`Calculate_and_Save_Formation_Channels_Boesky24_data.ipynb`) to calculate and save formation-channel fractions from Boesky et al. (2024) data, with output CSV files for BBH, BHNS, and BNS rates by formation channel.
+### `figures/`
+
+Contains output PDF figures for all figures in the paper (Figures 2–15 and appendix figures).
 
 ### `interactive_figures_and_tables/`
 
-Contains the interactive HTML table (`formation_channel_rates_table.html`) displaying formation-channel rates and fractions for all compiled simulations, with additional model parameters. Also accessible online via the link above.
+Contains the interactive HTML table (`formation_channel_rates_table.html`) and all interactive figure HTML files. Also accessible online via the link above.
 
 ---
 
