@@ -85,7 +85,8 @@ Contains the interactive HTML table (`formation_channel_rates_table.html`) and a
 If you use this repository or the compiled data, please cite:
 
 > Broekgaarden et al. (2026), *"How Common Are Common Envelopes? Quantifying Their Role in Forming Gravitational-Wave Sources"* (paper)
-> Broekgaraden et al. (2026) 10.5281/zenodo.7815200 *"How Common Are Common Envelopes? Quantifying Their Role in Forming Gravitational-Wave Sources" Data and Code * (data and code) ; see citation at https://zenodo.org/records/7815201 
+
+> Broekgaarden et al. (2026), *"How Common Are Common Envelopes? Quantifying Their Role in Forming Gravitational-Wave Sources — Data and Code"* (v3.0), Zenodo. https://zenodo.org/records/20524794
 
 ---
 
