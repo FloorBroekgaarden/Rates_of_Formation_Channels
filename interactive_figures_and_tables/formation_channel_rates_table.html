@@ -131,7 +131,7 @@ html{scroll-behavior:smooth}
 .j-bns{border-color:#1b5e20;color:#1b5e20}.j-bns:hover{background:#1b5e20!important}
 .nav-sep{color:#ddd;padding:0 2px;font-size:16px;line-height:1;user-select:none}
 .nav-label{font-size:11px;color:#aaa;font-weight:600;letter-spacing:.4px;white-space:nowrap}
-#table-section,#fig2,#fig3,#fig4,#fig5,#fig9,#fig10,#fig12,#fig13{scroll-margin-top:54px}
+#table-section,#fig2,#fig3,#fig4,#fig5,#fig9,#fig10,#fig12,#fig13,#fig15{scroll-margin-top:54px}
 </style>
 </head>
 <body>
@@ -163,6 +163,9 @@ html{scroll-behavior:smooth}
   <span class="nav-label">JUMP TO</span>
   <span class="nav-sep">│</span>
   <a class="j-table" href="#table-section">📊 Model Table</a>
+  <span class="nav-sep">│</span>
+  <span class="nav-label">EFFICIENCY</span>
+  <a class="j-bhbh" href="#fig15">Fig 15 — Formation efficiency</a>
   <span class="nav-sep">│</span>
   <span class="nav-label">SUMMARY</span>
   <a class="j-bhbh" href="#fig2">Fig 2 — All DCOs</a>
@@ -358,6 +361,21 @@ html{scroll-behavior:smooth}
     pan with the Plotly toolbar. Figures 3–5 offer a <strong>Simple</strong> view (CE vs. no-CE)
     and a <strong>Detailed</strong> view (individual channels); use the toggle to switch.
   </p>
+
+  <!-- ── Figure 15: formation efficiency 4x6 ── -->
+  <div id="fig15" class="fig-block">
+    <h3>Figure 15 — Formation efficiency by channel: Iorio, Broekgaarden, van Son, Neijssel (4 × 6)</h3>
+    <p class="fig-caption">
+      Formation-channel fraction as a function of metallicity log₁₀(Z) for all three DCO types
+      (BBH, BHNS, BNS) and all four population-synthesis studies.
+      Columns 1–3 show the fraction forming <strong style="color:#00A7E1">with CE</strong>;
+      columns 4–6 show the fraction forming <strong style="color:#FFA630">without CE</strong>.
+      <strong>Hover over any line</strong> to highlight it and read its model label
+      (e.g. "Iorio | model F | α=1.0" or "Broekgaarden | model A").
+      All other lines fade so the selected one stands out.
+    </p>
+    <iframe src="Fig15_combined_with_and_without_CE_interactive.html" height="880" loading="lazy"></iframe>
+  </div>
 
   <!-- ── Figure 2: formation-channel summary (three DCOs) ── -->
   <div id="fig2" class="fig-block">
