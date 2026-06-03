@@ -2,3 +2,5 @@
 plottingCode/Fig1_schematic/~$formation_channels_legend.pptx
 *data-checkpoint.ipynb
 *.pyc
+*checkpoint.ipynb
+plottingCode/.ipynb_checkpoints/*
