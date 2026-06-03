@@ -114,6 +114,24 @@ td.no-data{color:#ccc}
 .fig-block h3{font-size:1rem;font-weight:700;color:#2c3e50;margin-bottom:4px}
 .fig-block .fig-caption{font-size:0.82rem;color:#666;line-height:1.55;margin-bottom:10px;max-width:860px}
 .fig-block iframe{width:100%;border:1px solid #e0e4ef;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.09);display:block;scrolling:no}
+/* ── simple / detailed view toggle ── */
+.fc-toggle{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.fc-toggle .toggle-label{font-size:12px;color:#555;font-weight:600}
+.fc-btn{padding:5px 14px;border-radius:20px;border:2px solid #3a6ea5;color:#3a6ea5;background:transparent;font-size:12px;font-weight:600;cursor:pointer;transition:all .15s}
+.fc-btn:hover{background:#3a6ea5;color:#fff}
+.fc-btn.active{background:#3a6ea5;color:#fff}
+/* ── smooth scrolling + jump nav ── */
+html{scroll-behavior:smooth}
+.jump-nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:2px solid #e0e4ef;padding:8px 20px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.1);margin:0 -20px 18px}
+.jump-nav a{padding:4px 11px;border-radius:20px;font-size:12px;font-weight:600;text-decoration:none;border:1.5px solid;transition:all .15s;white-space:nowrap}
+.jump-nav a:hover{color:#fff!important}
+.j-table{border-color:#2c3e50;color:#2c3e50}.j-table:hover{background:#2c3e50!important}
+.j-bhbh{border-color:#bf360c;color:#bf360c}.j-bhbh:hover{background:#bf360c!important}
+.j-bhns{border-color:#6a1b9a;color:#6a1b9a}.j-bhns:hover{background:#6a1b9a!important}
+.j-bns{border-color:#1b5e20;color:#1b5e20}.j-bns:hover{background:#1b5e20!important}
+.nav-sep{color:#ddd;padding:0 2px;font-size:16px;line-height:1;user-select:none}
+.nav-label{font-size:11px;color:#aaa;font-weight:600;letter-spacing:.4px;white-space:nowrap}
+#table-section,#fig3,#fig4,#fig5,#fig9,#fig10,#fig12,#fig13{scroll-margin-top:54px}
 </style>
 </head>
 <body>
@@ -141,7 +159,26 @@ td.no-data{color:#ccc}
   </p>
 </div>
 
-<div class="controls">
+<nav class="jump-nav">
+  <span class="nav-label">JUMP TO</span>
+  <span class="nav-sep">│</span>
+  <a class="j-table" href="#table-section">📊 Model Table</a>
+  <span class="nav-sep">│</span>
+  <span class="nav-label">FORMATION CHANNELS</span>
+  <a class="j-bhbh" href="#fig3">Fig 3 — BBH</a>
+  <a class="j-bhns" href="#fig4">Fig 4 — BHNS</a>
+  <a class="j-bns"  href="#fig5">Fig 5 — BNS</a>
+  <span class="nav-sep">│</span>
+  <span class="nav-label">RATE vs FRACTION</span>
+  <a class="j-bhbh" href="#fig9">Fig 9 — BBH</a>
+  <a class="j-bhns" href="#fig10">Fig 10 — BHNS</a>
+  <span class="nav-sep">│</span>
+  <span class="nav-label">PARAM DEPENDENCE</span>
+  <a class="j-bhbh" href="#fig12">Fig 12 — BBH</a>
+  <a class="j-bhns" href="#fig13">Fig 13 — BHNS</a>
+</nav>
+
+<div id="table-section" class="controls">
   <input type="text" id="search" placeholder="🔍  Filter by model, study, or parameter…" oninput="filterTable()">
   <div class="toggle-group">
     <span class="toggle-label">Show/hide:</span>
@@ -312,12 +349,78 @@ td.no-data{color:#ccc}
 <section class="figs-section">
   <h2>Interactive Figures</h2>
   <p class="sec-intro">
-    Interactive versions of Figures 9–13 from Broekgaarden et al. (2026).
-    Each figure is fully interactive: hover over points for details, click legend entries to
-    toggle studies, and zoom or pan with the Plotly toolbar.
+    Interactive versions of Figures 3–5 and 9–13 from Broekgaarden et al. (2026).
+    Each figure is fully interactive: hover over any bar or point to see the paper name and
+    all formation-channel fractions, click legend entries to show/hide channels, and zoom or
+    pan with the Plotly toolbar. Figures 3–5 offer a <strong>Simple</strong> view (CE vs. no-CE)
+    and a <strong>Detailed</strong> view (individual channels); use the toggle to switch.
   </p>
 
+  <!-- ── Figure 3: BBH formation channels ── -->
+  <div id="fig3" class="fig-block">
+    <h3>Figure 3 — BBH: formation-channel fractions and merger rates, by model</h3>
+    <p class="fig-caption">
+      Formation-channel breakdown for all compiled BBH population-synthesis models, sorted by
+      the fraction forming without a common-envelope (CE) phase (ascending).
+      <em>Simple</em> view shows the broad CE / no-CE / unspecified split.
+      <em>Detailed</em> view resolves individual sub-channels (classic SMT, CHE, classic CE,
+      SCCE, DCCE, …) and is restricted to models that report detailed channel fractions.
+      The right panel shows the total local intrinsic merger rate; the grey band marks the
+      GWTC-5 observed range.
+    </p>
+    <div class="fc-toggle">
+      <span class="toggle-label">View:</span>
+      <button class="fc-btn active" onclick="showFC('fig3','simple',this)">Simple (CE / no-CE)</button>
+      <button class="fc-btn"        onclick="showFC('fig3','detailed',this)">Detailed channels</button>
+    </div>
+    <div id="fig3-simple">
+      <iframe src="Fig3_BH-BH_simple_interactive.html" height="2700" loading="lazy"></iframe>
+    </div>
+    <div id="fig3-detailed" style="display:none">
+      <iframe src="Fig3_BH-BH_detailed_interactive.html" height="2050" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <!-- ── Figure 4: BHNS formation channels ── -->
+  <div id="fig4" class="fig-block">
+    <h3>Figure 4 — BHNS: formation-channel fractions and merger rates, by model</h3>
+    <p class="fig-caption">
+      Same as Figure 3 for BH–NS mergers.
+    </p>
+    <div class="fc-toggle">
+      <span class="toggle-label">View:</span>
+      <button class="fc-btn active" onclick="showFC('fig4','simple',this)">Simple (CE / no-CE)</button>
+      <button class="fc-btn"        onclick="showFC('fig4','detailed',this)">Detailed channels</button>
+    </div>
+    <div id="fig4-simple">
+      <iframe src="Fig4_BH-NS_simple_interactive.html" height="2700" loading="lazy"></iframe>
+    </div>
+    <div id="fig4-detailed" style="display:none">
+      <iframe src="Fig4_BH-NS_detailed_interactive.html" height="2050" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <!-- ── Figure 5: BNS formation channels ── -->
+  <div id="fig5" class="fig-block">
+    <h3>Figure 5 — BNS: formation-channel fractions and merger rates, by model</h3>
+    <p class="fig-caption">
+      Same as Figure 3 for NS–NS mergers.
+    </p>
+    <div class="fc-toggle">
+      <span class="toggle-label">View:</span>
+      <button class="fc-btn active" onclick="showFC('fig5','simple',this)">Simple (CE / no-CE)</button>
+      <button class="fc-btn"        onclick="showFC('fig5','detailed',this)">Detailed channels</button>
+    </div>
+    <div id="fig5-simple">
+      <iframe src="Fig5_NS-NS_simple_interactive.html" height="2700" loading="lazy"></iframe>
+    </div>
+    <div id="fig5-detailed" style="display:none">
+      <iframe src="Fig5_NS-NS_detailed_interactive.html" height="2050" loading="lazy"></iframe>
+    </div>
+  </div>
+
   <div class="fig-block">
+  <div id="fig9" class="fig-block" style="margin-top:0">
     <h3>Figure 9 — BBH: intrinsic merger rate vs. formation-channel fraction, by study</h3>
     <p class="fig-caption">
       Fraction of BBH mergers forming without a CE phase as a function of the total local intrinsic
@@ -328,7 +431,7 @@ td.no-data{color:#ccc}
     <iframe src="Fig9_BH-BH_by_study_interactive.html" height="950" scrolling="no" loading="lazy"></iframe>
   </div>
 
-  <div class="fig-block">
+  <div id="fig10" class="fig-block">
     <h3>Figure 10 — BHNS: intrinsic merger rate vs. formation-channel fraction, by study</h3>
     <p class="fig-caption">
       Same as Figure 9 for BH–NS mergers.
@@ -336,7 +439,7 @@ td.no-data{color:#ccc}
     <iframe src="Fig10_BH-NS_by_study_interactive.html" height="950" scrolling="no" loading="lazy"></iframe>
   </div>
 
-  <div class="fig-block">
+  <div id="fig12" class="fig-block">
     <h3>Figure 12 — BBH: without-CE fraction as a function of model parameters</h3>
     <p class="fig-caption">
       Dependence of the fraction of BBH mergers forming without a CE phase on commonly varied
@@ -349,7 +452,7 @@ td.no-data{color:#ccc}
     <iframe src="Fig12_BH-BH_withoutCE_fraction_vs_parameters_interactive.html" height="1120" scrolling="no" loading="lazy"></iframe>
   </div>
 
-  <div class="fig-block">
+  <div id="fig13" class="fig-block">
     <h3>Figure 13 — BHNS: without-CE fraction as a function of model parameters</h3>
     <p class="fig-caption">
       Same as Figure 12 for BH–NS mergers.
@@ -364,6 +467,16 @@ td.no-data{color:#ccc}
 </div>
 
 <script>
+// ── simple / detailed toggle for Figs 3, 4, 5 ───────────────────────────────
+function showFC(fig, view, btn) {
+  ['simple','detailed'].forEach(v => {
+    const el = document.getElementById(`${fig}-${v}`);
+    if (el) el.style.display = (v === view) ? '' : 'none';
+  });
+  btn.closest('.fc-toggle').querySelectorAll('.fc-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
 // ── hover tooltip for truncated cells ────────────────────────────────────────
 const ttBox = document.getElementById('tt-box');
 document.addEventListener('mouseover', e => {
