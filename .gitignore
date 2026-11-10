@@ -8,3 +8,4 @@ plottingCode/.ipynb_checkpoints/Figure_14_and_appendix_Formation_Efficiency_form
 *.zip
 /paper_files
 /paper_zip
+.claude/settings.local.json
